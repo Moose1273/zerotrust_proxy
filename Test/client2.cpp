@@ -13,15 +13,16 @@
 #include <arpa/inet.h>
 #include <unistd.h>
 #include <netdb.h>
+#include "SPA.h"
 #endif
 typedef int SOCKET;
 #define INVALID_SOCKET -1
 #define SOCKET_ERROR -1
 using namespace std;
-class ProxyClient
+class SPAProxyClient
 {
 public:
-    ProxyClient(const std::string &serverAddr, int serverPort) : m_serverAddr(serverAddr), m_serverPort(serverPort)
+    SPAProxyClient(const std::string &serverAddr, int serverPort) : m_serverAddr(serverAddr), m_serverPort(serverPort)
     {
 #ifdef _WIN32
         WSADATA wsaData;
@@ -32,7 +33,7 @@ public:
         }
 #endif
     }
-    ~ProxyClient()
+    ~SPAProxyClient()
     {
 #ifdef _WIN32
         WSACleanup();
@@ -60,14 +61,33 @@ public:
 
         return true;
     }
+    
+    //send&receive UDP data
+    // bool sendUDPData(const std::vector<char> &data)
+    // {
+    //     int result = send(m_socket, data.data(), data.size(), 0);
+    //     return result != SOCKET_ERROR;
+    // }
+    // bool receiveUDPData(std::vector<char> &data)
+    // {
+    //     char buffer[1024];
+    //     int numBytes = recv(m_socket, buffer, sizeof(buffer), 0);
+    //     if (numBytes == SOCKET_ERROR || numBytes == 0)
+    //     {
+    //         return false;
+    //     }
+    //     data.insert(data.end(), buffer, buffer + numBytes);
+    //     return true;
+    // }
 
-    bool sendUDPData(const std::vector<char> &data)
+    bool sendSPAData()
     {
-        int result = send(m_socket, data.data(), data.size(), 0);
+        initialSPA(&spaInfo);
+        int result = send(m_socket, (char*)&spaInfo, sizeof(SPA), 0);
         return result != SOCKET_ERROR;
     }
 
-    bool receiveUDPData(std::vector<char> &data)
+    bool receiveSPAData(std::vector<char> &data)
     {
         char buffer[1024];
         int numBytes = recv(m_socket, buffer, sizeof(buffer), 0);
@@ -76,6 +96,7 @@ public:
             return false;
         }
         data.insert(data.end(), buffer, buffer + numBytes);
+        std::cout<<string(data.begin(), data.end())<<endl;
         return true;
     }
 
@@ -92,7 +113,9 @@ private:
     std::string m_serverAddr;
     int m_serverPort;
     SOCKET m_socket;
+    struct SPA spaInfo;
 };
+
 class TLSProxyClient
 {
 public:
@@ -223,26 +246,27 @@ private:
     SSL* m_ssl = nullptr;
     X509* server_cert;
 };
+
 int main(int argc, char **argv)
 {
-    //ProxyClient client("121.248.51.84", 7878);
-    TLSProxyClient tlsClient("121.248.51.84", 7878);
-    if (!tlsClient.connectToTLSServer())
+    SPAProxyClient client("121.248.51.84", 7878);
+    //TLSProxyClient tlsClient("121.248.51.84", 7878);
+    if (!client.connectToUDPServer())
     {
         std::cerr << "Failed to connect to server." << std::endl;
         return 1;
     }
     // 构造请求
-    std::vector<char> request = {'G', 'E', 'T', ' ', '/', ' ', 'H', 'T', 'T', 'P', '/', '1', '.', '1', '\r', '\n', '\r', '\n'};
-    // if (!tlsClient.sendTLSData(request))
-    // {
-    //     std::cerr << "Failed to send data." << std::endl;
-    //     tlsClient.closeConnection();
-    //     return 1;
-    // }
+    //std::vector<char> request = {'G', 'E', 'T', ' ', '/', ' ', 'H', 'T', 'T', 'P', '/', '1', '.', '1', '\r', '\n', '\r', '\n'};
+    if (!client.sendSPAData())
+    {
+        std::cerr << "Failed to send data." << std::endl;
+        client.closeConnection();
+        return 1;
+    }
     // 收到回复
     std::vector<char> response;
-    while (tlsClient.receiveTLSData(response))
+    while (client.receiveSPAData(response))
     {
         // Process the response data.
         std::cout << std::string(response.begin(), response.end()) << std::endl;
@@ -250,6 +274,6 @@ int main(int argc, char **argv)
         response.clear();
     }
 
-    tlsClient.closeConnection();
+    client.closeConnection();
     return 0;
 }

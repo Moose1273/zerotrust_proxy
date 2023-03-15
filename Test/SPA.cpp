@@ -1,50 +1,45 @@
 #ifdef _WIN32
-#include <winsock2.h>
-#pragma comment(lib, "Ws2_32.lib")
+	#include <winsock2.h>
+	#pragma comment(lib, "Ws2_32.lib")
 #else
-#include <sys/socket.h>
-#include <arpa/inet.h>
-#include <unistd.h>
-#include <netdb.h>
+	#include <sys/socket.h>
+	#include <arpa/inet.h>
+	#include <unistd.h>
+	#include <netdb.h>
 #endif
 #include<random>
 #include <cstring>
 #include <iostream>
 #include "SPA.h"
 using namespace std;
-
+#define MAX_IP_LEN 64
+const char* GET_IP_CMD = "curl -s https://api.ipify.org";
 //获得当前设备IP地址
 uint32_t getSourceIP() {
-    //curl checkip.amazonaws.com --no-progress-meter
-	//curl -L ip.tool.lu
-	//curl https://api.ipify.org
-	std::string cmdLine(R"("curl https://api.ipify.org")");
-	char buffer[1024] = { '\0' };
+
+	char cmd_output[MAX_IP_LEN];
+	memset(cmd_output, 0, sizeof(cmd_output));
+
 	FILE* pf = NULL;
 #ifdef _WIN32
-    pf = _popen(cmdLine.c_str(), "r");
+    pf = _popen(GET_IP_CMD, "r");
 #else 
-    pf = popen(cmdLine.c_str(), "r");
+    pf = popen(GET_IP_CMD, "r");
 #endif
 	if (NULL == pf) {
 		printf("open pipe failed\n");
 		return -1;
 	}
-	std::string ret;
-	while (fgets(buffer, sizeof(buffer), pf)) {
-		ret += buffer;
-	}
+	fgets(cmd_output, MAX_IP_LEN, pf);
 #ifdef _WIN32
     _pclose(pf);
 #else 
     pclose(pf);
 #endif
-	//ret.pop_back();
-	cout << "ret is: " << ret <<"ret length is: " <<ret.length()<< endl;
-	uint32_t iaddr = inet_addr(ret.c_str());
-	uint32_t ans = htonl(iaddr);
-	//std::cout << std::hex << ans << std::dec << std::endl;
-	return ans;
+	
+	uint32_t iaddr = inet_addr(cmd_output);
+	uint32_t ipAddr = htonl(iaddr);
+	return ipAddr;
 }
 int initialSPA(struct SPA* spa)
 {
