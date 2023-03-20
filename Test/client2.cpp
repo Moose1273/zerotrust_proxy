@@ -266,14 +266,16 @@ int main(int argc, char **argv)
     }
     // 收到回复
     std::vector<char> response;
-    while (client.receiveSPAData(response))
+    if(client.receiveSPAData(response))
     {
         // Process the response data.
         std::cout << std::string(response.begin(), response.end()) << std::endl;
         std::cout<<response.size()<<endl;
         response.clear();
     }
-
+    else {
+        std::cout<<"Failed to receive SPAData"<<std::endl;
+    }
     client.closeConnection();
     return 0;
 }

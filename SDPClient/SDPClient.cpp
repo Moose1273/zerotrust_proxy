@@ -1,12 +1,13 @@
 //#include "SPA2controller.cpp"
-#include <boost/asio.hpp>
-#ifdef _WIN32
-	#include <WinSock2.h>
-	#pragma comment(lib, "ws2_32.lib")
-#else 
-	#include <sys/socket.h>
-	#include <arpa/inet.h>
-#endif
+//#include <boost/asio.hpp>
+// #ifdef _WIN32
+// 	#include <WinSock2.h>
+// 	#pragma comment(lib, "ws2_32.lib")
+// #else 
+// 	#include <sys/socket.h>
+// 	#include <arpa/inet.h>
+// #endif
+#include <arpa/inet.h>
 #include <cstring>
 #include <iostream>
 using namespace std;
@@ -46,5 +47,6 @@ uint32_t getSourceIP() {
 
 int main() {
     getSourceIP();
+	cout<<"hello world!"<<endl;
     return 0;
 }
