@@ -5,6 +5,7 @@
 #include <openssl/ssl.h>
 #include <openssl/err.h>
 #include "SPA.h"
+#include "util.h"
 #ifdef _WIN32
 #include <winsock2.h>
 #pragma comment(lib, "Ws2_32.lib")
@@ -15,6 +16,9 @@
 #include <netdb.h>
 #include "SPA.h"
 #endif
+#define CA_CRT_PATH "./keys/ca.crt"
+#define CLIENT_KEY_PATH "./keys/client.key"
+#define CLIENT_CRT_PATH "./keys/client.crt"
 typedef int SOCKET;
 #define INVALID_SOCKET -1
 #define SOCKET_ERROR -1
@@ -61,29 +65,29 @@ public:
 
         return true;
     }
-    
-    //send&receive UDP data
-    // bool sendUDPData(const std::vector<char> &data)
-    // {
-    //     int result = send(m_socket, data.data(), data.size(), 0);
-    //     return result != SOCKET_ERROR;
-    // }
-    // bool receiveUDPData(std::vector<char> &data)
-    // {
-    //     char buffer[1024];
-    //     int numBytes = recv(m_socket, buffer, sizeof(buffer), 0);
-    //     if (numBytes == SOCKET_ERROR || numBytes == 0)
-    //     {
-    //         return false;
-    //     }
-    //     data.insert(data.end(), buffer, buffer + numBytes);
-    //     return true;
-    // }
+
+    // send&receive UDP data
+    //  bool sendUDPData(const std::vector<char> &data)
+    //  {
+    //      int result = send(m_socket, data.data(), data.size(), 0);
+    //      return result != SOCKET_ERROR;
+    //  }
+    //  bool receiveUDPData(std::vector<char> &data)
+    //  {
+    //      char buffer[1024];
+    //      int numBytes = recv(m_socket, buffer, sizeof(buffer), 0);
+    //      if (numBytes == SOCKET_ERROR || numBytes == 0)
+    //      {
+    //          return false;
+    //      }
+    //      data.insert(data.end(), buffer, buffer + numBytes);
+    //      return true;
+    //  }
 
     bool sendSPAData()
     {
         initialSPA(&spaInfo);
-        int result = send(m_socket, (char*)&spaInfo, sizeof(SPA), 0);
+        int result = send(m_socket, (char *)&spaInfo, sizeof(SPA), 0);
         return result != SOCKET_ERROR;
     }
 
@@ -96,7 +100,7 @@ public:
             return false;
         }
         data.insert(data.end(), buffer, buffer + numBytes);
-        std::cout<<string(data.begin(), data.end())<<endl;
+        std::cout << string(data.begin(), data.end()) << endl;
         return true;
     }
 
@@ -157,25 +161,34 @@ public:
         {
             return false;
         }
+        // 初始化 OpenSSL 库并创建 SSL 上下文
         SSL_load_error_strings();
         SSL_library_init();
+        OpenSSL_add_all_algorithms();
         // 加载数字证书和私钥
         m_sslContext = SSL_CTX_new(TLS_client_method());
-        SSL_CTX_use_certificate_file(m_sslContext, "client.crt", SSL_FILETYPE_PEM);
-        SSL_CTX_use_PrivateKey_file(m_sslContext, "client.key", SSL_FILETYPE_PEM);
-        SSL_CTX_set_verify(m_sslContext, SSL_VERIFY_PEER | SSL_VERIFY_FAIL_IF_NO_PEER_CERT, nullptr);
-        SSL_CTX_load_verify_locations(m_sslContext, "ca.crt", nullptr);
-        if (m_sslContext == nullptr) {
+        // 设置信任根证书
+        errif(SSL_CTX_load_verify_locations(m_sslContext, CA_CRT_PATH, NULL) <= 0, "CA Cert load error");
+        // 设置客户端证书，用来发给服务器进行双向验证
+        errif(SSL_CTX_use_certificate_file(m_sslContext, CLIENT_CRT_PATH, SSL_FILETYPE_PEM) <= 0, "Client Cert load error");
+        // 设置客户端私钥
+        errif(SSL_CTX_use_PrivateKey_file(m_sslContext, CLIENT_KEY_PATH, SSL_FILETYPE_PEM) <= 0, "Client Key load error");
+        // 检查私钥是否正确
+        errif(!SSL_CTX_check_private_key(m_sslContext), "Client Key parse error");
+        if (m_sslContext == nullptr)
+        {
             return false;
         }
         m_ssl = SSL_new(m_sslContext);
-        if (m_ssl == nullptr) {
+        if (m_ssl == nullptr)
+        {
             return false;
         }
         SSL_set_fd(m_ssl, m_socket);
 
         // SSL 握手
-        if (SSL_connect(m_ssl) <= 0) {
+        if (SSL_connect(m_ssl) <= 0)
+        {
             cerr << "SSL handshake failed." << endl;
             SSL_free(m_ssl);
             close(m_socket);
@@ -184,14 +197,15 @@ public:
 
         // 获取服务器证书信息
         server_cert = SSL_get_peer_certificate(m_ssl);
-        if (server_cert == nullptr) {
+        if (server_cert == nullptr)
+        {
             cerr << "No server certificate provided." << endl;
             SSL_shutdown(m_ssl);
             SSL_free(m_ssl);
             close(m_socket);
             return 1;
         }
-    
+
         // 验证服务器证书
         long verify_result = SSL_get_verify_result(m_ssl);
         if (verify_result != X509_V_OK)
@@ -230,7 +244,7 @@ public:
     {
         SSL_shutdown(m_ssl);
         X509_free(server_cert);
-        //SSL_free(m_ssl);
+        // SSL_free(m_ssl);
 #ifdef _WIN32
         closesocket(m_socket);
 #else
@@ -242,22 +256,22 @@ private:
     std::string m_serverAddr;
     int m_serverPort;
     SOCKET m_socket;
-    SSL_CTX* m_sslContext = nullptr;
-    SSL* m_ssl = nullptr;
-    X509* server_cert;
+    SSL_CTX *m_sslContext = nullptr;
+    SSL *m_ssl = nullptr;
+    X509 *server_cert;
 };
 
 int main(int argc, char **argv)
 {
     SPAProxyClient client("121.248.51.84", 7878);
-    //TLSProxyClient tlsClient("121.248.51.84", 7878);
+    // TLSProxyClient tlsClient("121.248.51.84", 7878);
     if (!client.connectToUDPServer())
     {
         std::cerr << "Failed to connect to server." << std::endl;
         return 1;
     }
     // 构造请求
-    //std::vector<char> request = {'G', 'E', 'T', ' ', '/', ' ', 'H', 'T', 'T', 'P', '/', '1', '.', '1', '\r', '\n', '\r', '\n'};
+    // std::vector<char> request = {'G', 'E', 'T', ' ', '/', ' ', 'H', 'T', 'T', 'P', '/', '1', '.', '1', '\r', '\n', '\r', '\n'};
     if (!client.sendSPAData())
     {
         std::cerr << "Failed to send data." << std::endl;
@@ -266,15 +280,16 @@ int main(int argc, char **argv)
     }
     // 收到回复
     std::vector<char> response;
-    if(client.receiveSPAData(response))
+    if (client.receiveSPAData(response))
     {
         // Process the response data.
         std::cout << std::string(response.begin(), response.end()) << std::endl;
-        std::cout<<response.size()<<endl;
+        std::cout << response.size() << endl;
         response.clear();
     }
-    else {
-        std::cout<<"Failed to receive SPAData"<<std::endl;
+    else
+    {
+        std::cout << "Failed to receive SPAData" << std::endl;
     }
     client.closeConnection();
     return 0;
