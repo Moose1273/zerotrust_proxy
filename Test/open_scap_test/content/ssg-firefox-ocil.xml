@@ -1,0 +1,610 @@
+<?xml version="1.0"?>
+<ocil:ocil xmlns:ocil="http://scap.nist.gov/schema/ocil/2.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ocil:generator>
+    <ocil:product_name>build_shorthand.py from SCAP Security Guide</ocil:product_name>
+    <ocil:product_version>ssg: 0.1.66</ocil:product_version>
+    <ocil:schema_version>2.0</ocil:schema_version>
+    <ocil:timestamp>2023-03-07T14:49:14</ocil:timestamp>
+  </ocil:generator>
+  <ocil:questionnaires>
+    <ocil:questionnaire id="ocil:ssg-firefox_policy-verification_ocil:questionnaire:1">
+      <ocil:title>Enable Certificate Verification</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-firefox_policy-verification_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-firefox_preferences-dod_root_certificate_installed_ocil:questionnaire:1">
+      <ocil:title>The DoD Root Certificate Exists</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-firefox_preferences-dod_root_certificate_installed_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-firefox_preferences-auto-download_actions_ocil:questionnaire:1">
+      <ocil:title>Disable auto-download for proscribed MIME types.</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-firefox_preferences-auto-download_actions_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-firefox_policy-telemetry_ocil:questionnaire:1">
+      <ocil:title>Disable Firefox Telemetry</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-firefox_policy-telemetry_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-firefox_policy-autoplay_video_ocil:questionnaire:1">
+      <ocil:title>Firefox autoplay must be disabled.</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-firefox_policy-autoplay_video_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-firefox_policy-development_tools_ocil:questionnaire:1">
+      <ocil:title>Disable Firefox Development Tools</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-firefox_policy-development_tools_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-firefox_policy-fingerprinting_protection_ocil:questionnaire:1">
+      <ocil:title>Enabled Firefox Fingerprinting Protection</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-firefox_policy-fingerprinting_protection_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-firefox_policy-extension_update_ocil:questionnaire:1">
+      <ocil:title>Firefox must be configured to not automatically update installed add-ons and plugins.</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-firefox_policy-extension_update_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-firefox_policy-cryptomining_ocil:questionnaire:1">
+      <ocil:title>Enabled Firefox Cryptomining protection</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-firefox_policy-cryptomining_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-firefox_preferences-enable_ca_trust_ocil:questionnaire:1">
+      <ocil:title>Enable Shared System Certificates</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-firefox_preferences-enable_ca_trust_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-firefox_policy-disable_pocket_ocil:questionnaire:1">
+      <ocil:title>Disable Firefox Pocket</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-firefox_policy-disable_pocket_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-firefox_policy-javascript_window_resizing_ocil:questionnaire:1">
+      <ocil:title>Disable JavaScript's Moving Or Resizing Windows Capability</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-firefox_policy-javascript_window_resizing_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-firefox_policy-search_suggestion_ocil:questionnaire:1">
+      <ocil:title>Firefox search suggestions must be disabled.</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-firefox_policy-search_suggestion_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-firefox_policy-network_prediction_ocil:questionnaire:1">
+      <ocil:title>Disable Firefox network prediction</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-firefox_policy-network_prediction_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-firefox_policy-search_update_ocil:questionnaire:1">
+      <ocil:title>Disable Installed Search Plugins Update Checking</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-firefox_policy-search_update_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-firefox_policy-disable_deprecated_ciphers_ocil:questionnaire:1">
+      <ocil:title>Disable Firefox deprecated ciphers</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-firefox_policy-disable_deprecated_ciphers_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-firefox_policy-extension_recommendation_ocil:questionnaire:1">
+      <ocil:title>Disabled Firefox Extension Recommendations</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-firefox_policy-extension_recommendation_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-firefox_policy-javascript_window_changes_ocil:questionnaire:1">
+      <ocil:title>Disable JavaScript's Raise Or Lower Windows Capability</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-firefox_policy-javascript_window_changes_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-installed_firefox_version_supported_ocil:questionnaire:1">
+      <ocil:title>Supported Version of Firefox Installed</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-installed_firefox_version_supported_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-firefox_policy-disable_studies_ocil:questionnaire:1">
+      <ocil:title>Disable Firefox Studies</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-firefox_policy-disable_studies_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-firefox_policy-private_browsing_ocil:questionnaire:1">
+      <ocil:title>Firefox private browsing must be disabled.</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-firefox_policy-private_browsing_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-firefox_policy-enhanced_tracking_ocil:questionnaire:1">
+      <ocil:title>Enabled Firefox Enhanced Tracking Protection</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-firefox_policy-enhanced_tracking_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-firefox_policy-pop-up_windows_ocil:questionnaire:1">
+      <ocil:title>Enable Firefox Pop-up Blocker</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-firefox_policy-pop-up_windows_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-firefox_policy-forget_button_ocil:questionnaire:1">
+      <ocil:title>Firefox must prevent the user from quickly deleting data.</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-firefox_policy-forget_button_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+  </ocil:questionnaires>
+  <ocil:test_actions>
+    <ocil:boolean_question_test_action id="ocil:ssg-firefox_policy-verification_action:testaction:1" question_ref="ocil:ssg-firefox_policy-verification_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-firefox_preferences-dod_root_certificate_installed_action:testaction:1" question_ref="ocil:ssg-firefox_preferences-dod_root_certificate_installed_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-firefox_preferences-auto-download_actions_action:testaction:1" question_ref="ocil:ssg-firefox_preferences-auto-download_actions_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-firefox_policy-telemetry_action:testaction:1" question_ref="ocil:ssg-firefox_policy-telemetry_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-firefox_policy-autoplay_video_action:testaction:1" question_ref="ocil:ssg-firefox_policy-autoplay_video_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-firefox_policy-development_tools_action:testaction:1" question_ref="ocil:ssg-firefox_policy-development_tools_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-firefox_policy-fingerprinting_protection_action:testaction:1" question_ref="ocil:ssg-firefox_policy-fingerprinting_protection_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-firefox_policy-extension_update_action:testaction:1" question_ref="ocil:ssg-firefox_policy-extension_update_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-firefox_policy-cryptomining_action:testaction:1" question_ref="ocil:ssg-firefox_policy-cryptomining_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-firefox_preferences-enable_ca_trust_action:testaction:1" question_ref="ocil:ssg-firefox_preferences-enable_ca_trust_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-firefox_policy-disable_pocket_action:testaction:1" question_ref="ocil:ssg-firefox_policy-disable_pocket_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-firefox_policy-javascript_window_resizing_action:testaction:1" question_ref="ocil:ssg-firefox_policy-javascript_window_resizing_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-firefox_policy-search_suggestion_action:testaction:1" question_ref="ocil:ssg-firefox_policy-search_suggestion_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-firefox_policy-network_prediction_action:testaction:1" question_ref="ocil:ssg-firefox_policy-network_prediction_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-firefox_policy-search_update_action:testaction:1" question_ref="ocil:ssg-firefox_policy-search_update_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-firefox_policy-disable_deprecated_ciphers_action:testaction:1" question_ref="ocil:ssg-firefox_policy-disable_deprecated_ciphers_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-firefox_policy-extension_recommendation_action:testaction:1" question_ref="ocil:ssg-firefox_policy-extension_recommendation_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-firefox_policy-javascript_window_changes_action:testaction:1" question_ref="ocil:ssg-firefox_policy-javascript_window_changes_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-installed_firefox_version_supported_action:testaction:1" question_ref="ocil:ssg-installed_firefox_version_supported_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-firefox_policy-disable_studies_action:testaction:1" question_ref="ocil:ssg-firefox_policy-disable_studies_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-firefox_policy-private_browsing_action:testaction:1" question_ref="ocil:ssg-firefox_policy-private_browsing_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-firefox_policy-enhanced_tracking_action:testaction:1" question_ref="ocil:ssg-firefox_policy-enhanced_tracking_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-firefox_policy-pop-up_windows_action:testaction:1" question_ref="ocil:ssg-firefox_policy-pop-up_windows_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-firefox_policy-forget_button_action:testaction:1" question_ref="ocil:ssg-firefox_policy-forget_button_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+  </ocil:test_actions>
+  <ocil:questions>
+    <ocil:boolean_question id="ocil:ssg-firefox_policy-verification_question:question:1">
+      <ocil:question_text>To verify that certificate verification is enabled, type the following into the browser address bar:
+    about:policies
+The output should have the following under security.default_personal_cert:
+Value: "Ask Every Time"
+Status: "locked"
+      Is it the case that it is not enabled?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-firefox_preferences-dod_root_certificate_installed_question:question:1">
+      <ocil:question_text>To verify that the DoD root certificate is installed,
+list all certificates in /etc/pki/ca-trust/source/anchors
+and compare them to the DoD root certificate. If there is a match
+to the DoD root certificate, then the DoD root certificate is
+installed.
+      Is it the case that it is not installed?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-firefox_preferences-auto-download_actions_question:question:1">
+      <ocil:question_text>To verify that any proscribed file types are configured for automatic download,
+type "about:preferences" into the search bar,  then
+type "Applications" in the Find bar in the upper-right corner.
+If any of the following file extensions are listed and the Action item associated with it 
+is an application that does or can execute the code, this is a finding.
+If the entry exists and the "Action" is "Save File" or "Always Ask", this is not a finding.
+
+  HTA
+  JSE
+  JS
+  MOCHA
+  SHS
+  VBE
+  VBS
+  SCT
+  WSC
+  FDF
+  XFDF
+  LSL
+  LSO
+  LSS
+  IQY
+  RQY
+  DOS
+  BAT
+  PS
+  EPS
+  WCH
+  WCM
+  WB1
+  WB3
+  WCH
+  WCM
+  AD
+
+      Is it the case that ?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-firefox_policy-telemetry_question:question:1">
+      <ocil:question_text>To verify that Firefox telemetry is disabled,
+type the following into the browser address bar:
+about:policies
+The output should have the following:
+"DisableTelemetry": true
+      Is it the case that ?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-firefox_policy-autoplay_video_question:question:1">
+      <ocil:question_text>To verify that search suggestions are disabled,
+type the following into the browser address bar:
+about:policies
+The output should have the following under Permissions -&gt; Autoplay:
+"Default": "block-audio-video"
+      Is it the case that ?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-firefox_policy-development_tools_question:question:1">
+      <ocil:question_text>To verify that Firefox Development Tools are disabled,
+type the following into the browser address bar:
+about:policies
+The output should have the following:
+"DisableDeveloperTools": true,
+      Is it the case that it is not disabled?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-firefox_policy-fingerprinting_protection_question:question:1">
+      <ocil:question_text>To verify that fingerprinting protection is enabled,
+type the following into the browser address bar:
+about:policies
+The output should have the following under EnableTrackingProtection:
+"Fingerprinting": true
+      Is it the case that ?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-firefox_policy-extension_update_question:question:1">
+      <ocil:question_text>To verify that certificate verification is enabled,
+type the following into the browser address bar:
+about:policies
+The output should have the following:
+"ExtensionUpdate": false
+Status: "locked"
+      Is it the case that it is not enabled?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-firefox_policy-cryptomining_question:question:1">
+      <ocil:question_text>To verify that cryptomining protection is enabled,
+type the following into the browser address bar:
+about:policies
+The output should have the following under EnableTrackingProtection:
+"Cryptomining": true
+      Is it the case that ?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-firefox_preferences-enable_ca_trust_question:question:1">
+      <ocil:question_text>To verify that the central system cerificate authority store is enabled,
+run the following command:
+$ ls -l /etc/alternatives/libnssckbi.so.x86_64
+The output should return something similar to:
+lrwxrwxrwx. 1 root root 34 Apr 30 09:19 /etc/alternatives/libnssckbi.so.x86_64 -&gt; /usr/lib64/pkcs11/p11-kit-trust.so
+      Is it the case that it is not enabled?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-firefox_policy-disable_pocket_question:question:1">
+      <ocil:question_text>To verify that Pocket is disabled,
+type the following into the browser address bar:
+about:policies
+The output should have the following:
+"DisablePocket": true
+      Is it the case that ?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-firefox_policy-javascript_window_resizing_question:question:1">
+      <ocil:question_text>To verify that JavaScript cannot change windows sizing,
+type the following into the browser address bar:
+about:policies
+The output should have the following uder dom.disable_window_move_resize:
+"Value": true,
+"Status": "locked",
+      Is it the case that it is not disabled?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-firefox_policy-search_suggestion_question:question:1">
+      <ocil:question_text>To verify that search suggestions are disabled,
+type the following into the browser address bar:
+about:policies
+The output should have the following:
+"SearchSuggestEnabled": false
+      Is it the case that ?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-firefox_policy-network_prediction_question:question:1">
+      <ocil:question_text>To verify that network prediction is disabled,
+type the following into the browser address bar:
+about:policies
+The output should have the following:
+"NetworkPrediction": false
+      Is it the case that it is not disabled?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-firefox_policy-search_update_question:question:1">
+      <ocil:question_text>To verify that checks for installed search plugin updates are disabled,
+type the following into the browser address bar:
+about:policies
+The output should have the following under browser.search.update:
+Value: false
+Status: "locked"
+      Is it the case that it is not disabled?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-firefox_policy-disable_deprecated_ciphers_question:question:1">
+      <ocil:question_text>To verify that deprecated ciphers are disabled,
+type the following into the browser address bar:
+about:policies
+The output should have the following under DisabledCiphers:
+"TLS_RSA_WITH_3DES_EDE_CBC_SHA": true
+      Is it the case that ?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-firefox_policy-extension_recommendation_question:question:1">
+      <ocil:question_text>To verify that enhanced tracking protection is enabled,
+type the following into the browser address bar:
+about:policies
+The output should have the following under Preferences -&gt; extensions.htmlaboutaddons.recommendations.enabled:
+"Value": false
+"Status": "locked"
+      Is it the case that ?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-firefox_policy-javascript_window_changes_question:question:1">
+      <ocil:question_text>To verify that JavaScript cannot change windows sizing,
+type the following into the browser address bar:
+about:policies
+The output should have the following uder dom.disable_window_flip:
+"Value": true,
+"Status": "locked",
+      Is it the case that it is not disabled?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-installed_firefox_version_supported_question:question:1">
+      <ocil:question_text>If the system is joined to the Red Hat Network, a Red Hat Satellite Server, or
+a yum server which provides updates, invoking the following command will
+indicate if updates are available:
+$ sudo yum check-update
+If the system is not configured to update from one of these sources,
+run the following command to list when each package was last updated:
+$ rpm -qa -last
+Compare this to Red Hat Security Advisories (RHSA) listed at
+
+    https://access.redhat.com/security/updates/active/
+to determine if the system is missing applicable updates.
+      Is it the case that it is not updated?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-firefox_policy-disable_studies_question:question:1">
+      <ocil:question_text>To verify that Studies is disabled,
+type the following into the browser address bar:
+about:policies
+The output should have the following:
+"DisableFirefoxStudies": true
+      Is it the case that ?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-firefox_policy-private_browsing_question:question:1">
+      <ocil:question_text>To verify that private browsing is disabled
+type the following into the browser address bar:
+about:policies
+The output should have the following uder dom.disable_window_move_resize:
+"DisablePrivateBrowsing": true
+      Is it the case that ?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-firefox_policy-enhanced_tracking_question:question:1">
+      <ocil:question_text>To verify that enhanced tracking protection is enabled,
+type the following into the browser address bar:
+about:policies
+The output should have the following under Preferences -&gt; browser.contentblocking.category:
+"Value": "strict"
+"Status": "locked"
+      Is it the case that ?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-firefox_policy-pop-up_windows_question:question:1">
+      <ocil:question_text>To verify that pop-up blocker is enabled,
+run the following command:
+$ grep -B10 'PopupBlocking' FIREFOX_INSTALL_DIR/*.cfg
+The output should include:
+"Default": true
+"Locked": true
+      Is it the case that it is not enabled?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-firefox_policy-forget_button_question:question:1">
+      <ocil:question_text>To verify that users cannot access the forget button,
+type the following into the browser address bar:
+about:policies
+The output should have the following:
+"DisableForgetButon": true
+      Is it the case that ?
+      </ocil:question_text>
+    </ocil:boolean_question>
+  </ocil:questions>
+</ocil:ocil>

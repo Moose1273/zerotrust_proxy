@@ -4,7 +4,6 @@
 #include <cstring>
 #include <openssl/ssl.h>
 #include <openssl/err.h>
-#include "SPA.h"
 #include "util.h"
 #ifdef _WIN32
 #include <winsock2.h>
@@ -14,7 +13,8 @@
 #include <arpa/inet.h>
 #include <unistd.h>
 #include <netdb.h>
-#include "SPA.h"
+#include "communication/SPA_Proxy.h"
+#include "communication/TLS_Proxy.h"
 #endif
 #define CA_CRT_PATH "./keys/ca.crt"
 #define CLIENT_KEY_PATH "./keys/client.key"
@@ -23,274 +23,173 @@ typedef int SOCKET;
 #define INVALID_SOCKET -1
 #define SOCKET_ERROR -1
 using namespace std;
-class SPAProxyClient
-{
-public:
-    SPAProxyClient(const std::string &serverAddr, int serverPort) : m_serverAddr(serverAddr), m_serverPort(serverPort)
-    {
-#ifdef _WIN32
-        WSADATA wsaData;
-        int result = WSAStartup(MAKEWORD(2, 2), &wsaData);
-        if (result != 0)
-        {
-            throw std::runtime_error("WSAStartup failed: " + std::to_string(result));
-        }
-#endif
-    }
-    ~SPAProxyClient()
-    {
-#ifdef _WIN32
-        WSACleanup();
-#endif
-    }
-
-    // connect to UDP server
-    bool connectToUDPServer()
-    {
-        m_socket = socket(AF_INET, SOCK_DGRAM, 0);
-        if (m_socket == INVALID_SOCKET)
-        {
-            return false;
-        }
-
-        struct sockaddr_in server;
-        server.sin_family = AF_INET;
-        server.sin_addr.s_addr = inet_addr(m_serverAddr.c_str());
-        server.sin_port = htons(m_serverPort);
-
-        if (connect(m_socket, (struct sockaddr *)&server, sizeof(server)) != 0)
-        {
-            return false;
-        }
-
-        return true;
-    }
-
-    // send&receive UDP data
-    //  bool sendUDPData(const std::vector<char> &data)
-    //  {
-    //      int result = send(m_socket, data.data(), data.size(), 0);
-    //      return result != SOCKET_ERROR;
-    //  }
-    //  bool receiveUDPData(std::vector<char> &data)
-    //  {
-    //      char buffer[1024];
-    //      int numBytes = recv(m_socket, buffer, sizeof(buffer), 0);
-    //      if (numBytes == SOCKET_ERROR || numBytes == 0)
-    //      {
-    //          return false;
-    //      }
-    //      data.insert(data.end(), buffer, buffer + numBytes);
-    //      return true;
-    //  }
-
-    bool sendSPAData()
-    {
-        initialSPA(&spaInfo);
-        int result = send(m_socket, (char *)&spaInfo, sizeof(SPA), 0);
-        return result != SOCKET_ERROR;
-    }
-
-    bool receiveSPAData(std::vector<char> &data)
-    {
-        char buffer[1024];
-        int numBytes = recv(m_socket, buffer, sizeof(buffer), 0);
-        if (numBytes == SOCKET_ERROR || numBytes == 0)
-        {
-            return false;
-        }
-        data.insert(data.end(), buffer, buffer + numBytes);
-        std::cout << string(data.begin(), data.end()) << endl;
-        return true;
-    }
-
-    void closeConnection()
-    {
-#ifdef _WIN32
-        closesocket(m_socket);
-#else
-        close(m_socket);
-#endif
-    }
-
-private:
-    std::string m_serverAddr;
-    int m_serverPort;
-    SOCKET m_socket;
-    struct SPA spaInfo;
-};
-
-class TLSProxyClient
-{
-public:
-    TLSProxyClient(const std::string &serverAddr, int serverPort) : m_serverAddr(serverAddr), m_serverPort(serverPort)
-    {
-#ifdef _WIN32
-        WSADATA wsaData;
-        int result = WSAStartup(MAKEWORD(2, 2), &wsaData);
-        if (result != 0)
-        {
-            throw std::runtime_error("WSAStartup failed: " + std::to_string(result));
-        }
-#endif
-    }
-    ~TLSProxyClient()
-    {
-        SSL_CTX_free(m_sslContext);
-        EVP_cleanup();
-#ifdef _WIN32
-        WSACleanup();
-#endif
-    }
-
-    // connect to TLS server
-    bool connectToTLSServer()
-    {
-        m_socket = socket(AF_INET, SOCK_STREAM, 0);
-        if (m_socket == INVALID_SOCKET)
-        {
-            return false;
-        }
-
-        struct sockaddr_in server;
-        server.sin_family = AF_INET;
-        server.sin_addr.s_addr = inet_addr(m_serverAddr.c_str());
-        server.sin_port = htons(m_serverPort);
-
-        if (connect(m_socket, (struct sockaddr *)&server, sizeof(server)) != 0)
-        {
-            return false;
-        }
-        // 初始化 OpenSSL 库并创建 SSL 上下文
-        SSL_load_error_strings();
-        SSL_library_init();
-        OpenSSL_add_all_algorithms();
-        // 加载数字证书和私钥
-        m_sslContext = SSL_CTX_new(TLS_client_method());
-        // 设置信任根证书
-        errif(SSL_CTX_load_verify_locations(m_sslContext, CA_CRT_PATH, NULL) <= 0, "CA Cert load error");
-        // 设置客户端证书，用来发给服务器进行双向验证
-        errif(SSL_CTX_use_certificate_file(m_sslContext, CLIENT_CRT_PATH, SSL_FILETYPE_PEM) <= 0, "Client Cert load error");
-        // 设置客户端私钥
-        errif(SSL_CTX_use_PrivateKey_file(m_sslContext, CLIENT_KEY_PATH, SSL_FILETYPE_PEM) <= 0, "Client Key load error");
-        // 检查私钥是否正确
-        errif(!SSL_CTX_check_private_key(m_sslContext), "Client Key parse error");
-        if (m_sslContext == nullptr)
-        {
-            return false;
-        }
-        m_ssl = SSL_new(m_sslContext);
-        if (m_ssl == nullptr)
-        {
-            return false;
-        }
-        SSL_set_fd(m_ssl, m_socket);
-
-        // SSL 握手
-        if (SSL_connect(m_ssl) <= 0)
-        {
-            cerr << "SSL handshake failed." << endl;
-            SSL_free(m_ssl);
-            close(m_socket);
-            return 1;
-        }
-
-        // 获取服务器证书信息
-        server_cert = SSL_get_peer_certificate(m_ssl);
-        if (server_cert == nullptr)
-        {
-            cerr << "No server certificate provided." << endl;
-            SSL_shutdown(m_ssl);
-            SSL_free(m_ssl);
-            close(m_socket);
-            return 1;
-        }
-
-        // 验证服务器证书
-        long verify_result = SSL_get_verify_result(m_ssl);
-        if (verify_result != X509_V_OK)
-        {
-            cerr << "Server certificate verification failed: " << X509_verify_cert_error_string(verify_result) << endl;
-            X509_free(server_cert);
-            SSL_shutdown(m_ssl);
-            SSL_free(m_ssl);
-            close(m_socket);
-            return 1;
-        }
-        // 发送客户端证书
-        SSL_write(m_ssl, "Hello, server!", 14);
-        return true;
-    }
-
-    bool sendTLSData(const std::vector<char> &data)
-    {
-        int result = SSL_write(m_ssl, data.data(), data.size());
-        return result > 0;
-    }
-
-    bool receiveTLSData(std::vector<char> &data)
-    {
-        char buffer[1024];
-        int numBytes = SSL_read(m_ssl, buffer, sizeof(buffer));
-        if (numBytes <= 0)
-        {
-            return false;
-        }
-        data.insert(data.end(), buffer, buffer + numBytes);
-        return true;
-    }
-
-    void closeConnection()
-    {
-        SSL_shutdown(m_ssl);
-        X509_free(server_cert);
-        // SSL_free(m_ssl);
-#ifdef _WIN32
-        closesocket(m_socket);
-#else
-        close(m_socket);
-#endif
-    }
-
-private:
-    std::string m_serverAddr;
-    int m_serverPort;
-    SOCKET m_socket;
-    SSL_CTX *m_sslContext = nullptr;
-    SSL *m_ssl = nullptr;
-    X509 *server_cert;
-};
 
 int main(int argc, char **argv)
 {
+    // 向controller发起SPA请求
     SPAProxyClient client("121.248.51.84", 7878);
-    // TLSProxyClient tlsClient("121.248.51.84", 7878);
-    if (!client.connectToUDPServer())
+    bool status = client.connectToSPAServer();
+    if (!status)
     {
         std::cerr << "Failed to connect to server." << std::endl;
-        return 1;
+        return -1;
     }
+    // cout<<status<<endl;
     // 构造请求
-    // std::vector<char> request = {'G', 'E', 'T', ' ', '/', ' ', 'H', 'T', 'T', 'P', '/', '1', '.', '1', '\r', '\n', '\r', '\n'};
+    client.initialSPA();
     if (!client.sendSPAData())
     {
         std::cerr << "Failed to send data." << std::endl;
         client.closeConnection();
-        return 1;
+        return -1;
     }
-    // 收到回复
+    // 收到SPA回复
     std::vector<char> response;
-    if (client.receiveSPAData(response))
-    {
-        // Process the response data.
-        std::cout << std::string(response.begin(), response.end()) << std::endl;
-        std::cout << response.size() << endl;
-        response.clear();
-    }
-    else
+    if (!client.receiveSPAData(response))
     {
         std::cout << "Failed to receive SPAData" << std::endl;
+        response.clear();
+        client.closeConnection();
+        return -1;
     }
+    // Process the response data.
+    std::cout << std::string(response.begin(), response.end()) << std::endl;
+    // std::cout << response.size() << endl;
+    response.clear();
     client.closeConnection();
+
+    // 向controller发起TLS请求
+    TLSProxyClient tlsClient("121.248.51.84", 7878);
+    bool status = tlsClient.connectToTLSServer();
+    if (!status)
+    {
+        std::cerr << "Failed to connect to server." << std::endl;
+        return -1;
+    }
+
+    std::vector<char> log_req;
+    tlsClient.constructLoginRequest(log_req);
+    if (!tlsClient.sendTLSData(log_req))
+    {
+        cerr << "send TLS log_req failed" << endl;
+        tlsClient.closeConnection();
+        return -1;
+    }
+    cout << "already sent tls log_req!" << endl;
+
+    // 接收login响应
+    std::vector<char> response;
+    if (!tlsClient.receiveTLSData(response))
+    {
+        std::cout << "Failed to receive TLSData" << std::endl;
+        response.clear();
+        tlsClient.closeConnection();
+        return -1;
+    }
+    // 解析login登录请求
+    std::cout << std::string(response.begin(), response.end()) << std::endl;
+    char *respStrChar_ = &response[0];
+    if (!tlsClient.analyzeTLSpacket(respStrChar_))
+    {
+        std::cout << "controller refuse to login" << std::endl;
+        response.clear();
+        tlsClient.closeConnection();
+        return -1;
+    }
+    cout << "controller accept login" << endl;
+
+    // 发送请求服务
+    if (!tlsClient.sendServiceRequest())
+    {
+        std::cout << "send service request failed" << std::endl;
+        response.clear();
+        tlsClient.closeConnection();
+        return -1;
+    }
+    cout << "Serivce req sent" << endl;
+    // 接收服务信息
+    response.clear();
+    if (!tlsClient.receiveTLSData(response))
+    {
+        std::cout << "Failed to receive TLSData" << std::endl;
+        response.clear();
+        tlsClient.closeConnection();
+        return -1;
+    }
+    // 解析服务信息
+    // std::cout << "receive service info: "<<std::string(response.begin(), response.end()) << std::endl;
+    respStrChar_ = &response[0];
+    if (!tlsClient.analyzeTLSpacket(respStrChar_))
+    {
+        std::cout << "analyse failed" << std::endl;
+        response.clear();
+        tlsClient.closeConnection();
+        return -1;
+    }
+    cout << "parse serivceList success" << endl;
+    cout << "respStrChar_ is: " << respStrChar_ << endl;
+    // todo 检查为什么respStrChar_为什么最后多了几个字符
+    cout << "last char of respStrChar_ is: " << respStrChar_[strlen(respStrChar_) - 1] << endl;
+
+    vector<string> gatewayInfo = tlsClient.getParses();
+
+    // 断开与controller的连接
+    // 不需要断开，因为后续还需要上传数据
+    // todo
+    tlsClient.closeConnection();
+
+    SPAProxyClient spaClient(gatewayInfo[0], atoi(gatewayInfo[1].c_str()));
+    if (!spaClient.connectToSPAServer())
+    {
+        std::cerr << "Failed to connect to server." << std::endl;
+        spaClient.closeConnection();
+        return -1;
+    }
+    spaClient.initialSPA(gatewayInfo[2].c_str(), gatewayInfo[3].c_str());
+
+    spaClient.sendSPAData();
+    if (!spaClient.sendSPAData())
+    {
+        std::cerr << "Failed to send data." << std::endl;
+        spaClient.closeConnection();
+        return -1;
+    }
+    response.clear();
+    if (!spaClient.receiveSPAData(response))
+    {
+        std::cout << "Failed to receive SPA response" << std::endl;
+        response.clear();
+        spaClient.closeConnection();
+        return -1;
+    }
+    char *resp_ = &response[0];
+    if (!spaClient.analyzeSPApacket(resp_))
+    {
+        std::cout << "Failed to analyze SPA response" << std::endl;
+        response.clear();
+        spaClient.closeConnection();
+        return -1;
+    }
+    // 关闭与网关的SPA连接
+    spaClient.closeConnection();
+    // 与网关 tls 握手
+    tlsClient.TLSsetter(gatewayInfo[0], atoi(gatewayInfo[1].c_str()));
+    status = tlsClient.connectToTLSServer();
+    if (!status)
+    {
+        std::cerr << "Failed to connect to server." << std::endl;
+        return -1;
+    }
+    string hello_msg = "hello gateway!";
+    vector<char> vec1;
+    vec1.assign(hello_msg.begin(), hello_msg.end());
+    if (!tlsClient.sendTLSData(vec1))
+    {
+        std::cout << "Failed to send TLS hello" << std::endl;
+        vec1.clear();
+        tlsClient.closeConnection();
+        return -1;
+    }
+    tlsClient.closeConnection();
     return 0;
 }
