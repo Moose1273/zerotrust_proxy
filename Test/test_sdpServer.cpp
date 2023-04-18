@@ -194,7 +194,7 @@ int main(int argc, char *argv[])
         cJSON_AddItemToObject(serviceObject2, "serverDescription", cJSON_CreateString("this is the second serverDescription")); 
         cJSON_AddItemToObject(serviceObject2, "gatewayId", cJSON_CreateString("this is the second gatewayId")); 
         cJSON_AddItemToObject(serviceObject2, "gatewayIP", cJSON_CreateString("121.248.51.84")); 
-        cJSON_AddItemToObject(serviceObject2, "gatewayPort", cJSON_CreateString("5656")); 
+        cJSON_AddItemToObject(serviceObject2, "gatewayPort", cJSON_CreateString("1111")); 
 
         // 定义 [ ] 数组
         cJSON *serviceList = cJSON_CreateArray();

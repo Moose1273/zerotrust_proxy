@@ -39,56 +39,57 @@ bool SPAProxyClient::connectToSPAServer()
 
     return true;
 }
-
-#define MAX_IP_LEN 64
-const char *GET_IP_CMD = "curl -s https://api.ipify.org";
 int SPAProxyClient::initialSPA(const char* hotp, const char* hmac)
 {
-	// initial userID
-	
-	// initial deviceID
 
-	// initial timestamp;
-	spaInfo.timestamp = time(NULL);
+    std::string ip;
 
-	// initial random_num;
-	std::default_random_engine e;
-	spaInfo.random_num = e();
-
-	// initial ip_address;
-	char cmd_output[MAX_IP_LEN];
-	memset(cmd_output, 0, sizeof(cmd_output));
-
-	FILE *pf = NULL;
+    // Windows系统
 #ifdef _WIN32
-	pf = _popen(GET_IP_CMD, "r");
+    // 执行ipconfig命令，并获取命令输出
+    FILE* fp = _popen("ipconfig | findstr /i \"IPv4\"", "r");
+    if (fp != nullptr) {
+        char buffer[1024];
+        while (fgets(buffer, sizeof(buffer), fp) != nullptr) {
+            char* pos = strstr(buffer, "IPv4");
+            if (pos != nullptr) {
+                ip = pos + strlen("IPv4 Address. . . . . . . . . . . :");
+                ip.erase(ip.find_last_not_of(" \n\r\t") + 1);
+                break;
+            }
+        }
+        _pclose(fp);
+    }
+
+    // Linux系统
 #else
-	pf = popen(GET_IP_CMD, "r");
-#endif
-	if (NULL == pf)
-	{
-		printf("open pipe failed\n");
-		return -1;
-	}
-	fgets(cmd_output, MAX_IP_LEN, pf);
-#ifdef _WIN32
-	_pclose(pf);
-#else
-	pclose(pf);
+    // 执行ip命令，并获取命令输出
+    FILE* fp = popen("ip addr | grep 'inet ' | grep -v '127.0.0.1' | awk '{print $2}' | cut -d'/' -f1", "r");
+    if (fp != nullptr) {
+        char buffer[1024];
+        while (fgets(buffer, sizeof(buffer), fp) != nullptr) {
+            ip = buffer;
+            ip.erase(ip.find_last_not_of(" \n\r\t") + 1);
+            break;
+        }
+        pclose(fp);
+    }
 #endif
 
-	uint32_t iaddr = inet_addr(cmd_output);
+	uint32_t iaddr = inet_addr(ip.c_str());
 	uint32_t ipAddr = htonl(iaddr);
 	spaInfo.ip_address = ipAddr;
 
 	// initial message_type
-	spaInfo.message_type = 0x0000;
+	spaInfo.message_type = 0;
 
 	// initial default_value
-
+    spaInfo.default_value[0] = 0;
+    spaInfo.default_value[1] = 0;
+    spaInfo.default_value[2] = 0;
 
 	// initial HOTP
-    if(!hotp)
+    if(hotp)
     {
         for(int i = 0; i < spaInfo.HOTP.size(); i++){
             if (hotp[i] == '1') {
@@ -98,7 +99,7 @@ int SPAProxyClient::initialSPA(const char* hotp, const char* hmac)
     }
 
 	// initial hmac
-    if(!hmac)
+    if(hmac)
     {
         for(int i = 0; i < spaInfo.hmac.size(); i++){
             if (hmac[i] == '1') {
@@ -106,11 +107,6 @@ int SPAProxyClient::initialSPA(const char* hotp, const char* hmac)
             }
         }
     }
-
-	string name = "service_name";
-	strncpy(spaInfo.name, name.c_str(), strlen(name.c_str()) + 1);
-	string type = "service_type";
-	strncpy(spaInfo.type, type.c_str(), strlen(type.c_str()) + 1);
 	return true;
 }
 
@@ -118,7 +114,17 @@ int SPAProxyClient::initialSPA(const char* hotp, const char* hmac)
 // initial and send SPA data packet
 bool SPAProxyClient::sendSPAData()
 {
-    int result = send(m_socket, (char *)&spaInfo, sizeof(SPA), 0);
+    cout<<"sizeof(spaInfo) is: "<<sizeof(spaInfo)<<endl;
+    cout<<"ipaddress is: "<<spaInfo.ip_address<<" "<<sizeof(spaInfo.ip_address)<<endl;
+    cout<<"timestamp is: "<<spaInfo.timestamp<<" "<<sizeof(spaInfo.timestamp)<<endl;
+    cout<<"random_num is: "<<spaInfo.random_num<<" "<<sizeof(spaInfo.random_num)<<endl;
+    cout<<"message_type is: "<<spaInfo.message_type<<" "<<sizeof(spaInfo.message_type)<<endl;
+    cout<<"default_value is: "<<spaInfo.default_value[0]<<" "<<sizeof(spaInfo.default_value)<<endl;
+    cout<<"userID is: "<<spaInfo.userID<<" "<<sizeof(spaInfo.userID)<<endl;
+    cout<<"deviceID is: "<<spaInfo.deviceID<<" "<<sizeof(spaInfo.deviceID)<<endl;
+    cout<<"HOTP is: "<<spaInfo.HOTP<<" "<<sizeof(spaInfo.HOTP)<<endl;
+    cout<<"hmac is: "<<spaInfo.hmac<<" "<<sizeof(spaInfo.hmac)<<endl;
+    int result = send(m_socket, (char *)&spaInfo, sizeof(spaInfo), 0);
     return result != SOCKET_ERROR;
 }
 
@@ -130,8 +136,8 @@ bool SPAProxyClient::receiveSPAData(std::vector<char> &data)
     {
         return false;
     }
-    //cout<<"len of buffer is: "<<strlen(buffer)<<endl;
-    //cout<<buffer<<endl;
+    cout<<"len of buffer is: "<<strlen(buffer)<<endl;
+    cout<<buffer<<endl;
     data.insert(data.end(), buffer, buffer + numBytes);
     //std::cout << string(data.begin(), data.end()) << endl;
     bool status = analyzeSPApacket(buffer);
