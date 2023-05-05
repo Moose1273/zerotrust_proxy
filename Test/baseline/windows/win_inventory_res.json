@@ -1,0 +1,1262 @@
+﻿{"cvssv2_basescore_sum":0,"inventory":[
+    {
+        "DisplayName":  "Application Verifier x64 External Package",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Application Verifier x64 External Package10.1.22000.832"
+    },
+    {
+        "DisplayName":  "Brother MFL-Pro Suite DCP-7180DN",
+        "DisplayVersion":  "1.0.5.0",
+        "NameVersionPair":  "Brother MFL-Pro Suite DCP-7180DN1.0.5.0"
+    },
+    {
+        "DisplayName":  "Calliope_Keyboard",
+        "DisplayVersion":  "1.00.08",
+        "NameVersionPair":  "Calliope_Keyboard1.00.08"
+    },
+    {
+        "DisplayName":  "ClickOnce Bootstrapper Package for Microsoft .NET Framework",
+        "DisplayVersion":  "4.8.09037",
+        "NameVersionPair":  "ClickOnce Bootstrapper Package for Microsoft .NET Framework4.8.09037"
+    },
+    {
+        "DisplayName":  "Counter-Strike: Global Offensive",
+        "DisplayVersion":  null,
+        "NameVersionPair":  "Counter-Strike: Global Offensive"
+    },
+    {
+        "DisplayName":  "DiagnosticsHub_CollectionService",
+        "DisplayVersion":  "17.3.32601",
+        "NameVersionPair":  "DiagnosticsHub_CollectionService17.3.32601"
+    },
+    {
+        "DisplayName":  "Dynamic Application Loader Host Interface Service",
+        "DisplayVersion":  "1.0.0.0",
+        "NameVersionPair":  "Dynamic Application Loader Host Interface Service1.0.0.0"
+    },
+    {
+        "DisplayName":  "EasyConnect",
+        "DisplayVersion":  "7,6,7,9",
+        "NameVersionPair":  "EasyConnect7,6,7,9"
+    },
+    {
+        "DisplayName":  "Endpoint Manager Communication Client",
+        "DisplayVersion":  "7.3.44980.22120",
+        "NameVersionPair":  "Endpoint Manager Communication Client7.3.44980.22120"
+    },
+    {
+        "DisplayName":  "Entity Framework 6.2.0 Tools  for Visual Studio 2022",
+        "DisplayVersion":  "6.2.0.0",
+        "NameVersionPair":  "Entity Framework 6.2.0 Tools  for Visual Studio 20226.2.0.0"
+    },
+    {
+        "DisplayName":  "Google Chrome",
+        "DisplayVersion":  "112.0.5615.138",
+        "NameVersionPair":  "Google Chrome112.0.5615.138"
+    },
+    {
+        "DisplayName":  "icecap_collection_neutral",
+        "DisplayVersion":  "17.4.33006",
+        "NameVersionPair":  "icecap_collection_neutral17.4.33006"
+    },
+    {
+        "DisplayName":  "icecap_collection_x64",
+        "DisplayVersion":  "17.4.33006",
+        "NameVersionPair":  "icecap_collection_x6417.4.33006"
+    },
+    {
+        "DisplayName":  "icecap_collectionresources",
+        "DisplayVersion":  "17.4.33006",
+        "NameVersionPair":  "icecap_collectionresources17.4.33006"
+    },
+    {
+        "DisplayName":  "icecap_collectionresourcesx64",
+        "DisplayVersion":  "17.4.33006",
+        "NameVersionPair":  "icecap_collectionresourcesx6417.4.33006"
+    },
+    {
+        "DisplayName":  "Intel(R) Chipset Device Software",
+        "DisplayVersion":  "10.1.18836.8283",
+        "NameVersionPair":  "Intel(R) Chipset Device Software10.1.18836.8283"
+    },
+    {
+        "DisplayName":  "Intel(R) LMS",
+        "DisplayVersion":  "1.0.0.0",
+        "NameVersionPair":  "Intel(R) LMS1.0.0.0"
+    },
+    {
+        "DisplayName":  "Intel(R) Management Engine Components",
+        "DisplayVersion":  "1.0.0.0",
+        "NameVersionPair":  "Intel(R) Management Engine Components1.0.0.0"
+    },
+    {
+        "DisplayName":  "Intel(R) Management Engine Components",
+        "DisplayVersion":  "2130.16.0.2387",
+        "NameVersionPair":  "Intel(R) Management Engine Components2130.16.0.2387"
+    },
+    {
+        "DisplayName":  "Intel(R) Management Engine Driver",
+        "DisplayVersion":  "1.0.0.0",
+        "NameVersionPair":  "Intel(R) Management Engine Driver1.0.0.0"
+    },
+    {
+        "DisplayName":  "IntelliJ IDEA 2022.2.3",
+        "DisplayVersion":  "222.4345.14",
+        "NameVersionPair":  "IntelliJ IDEA 2022.2.3222.4345.14"
+    },
+    {
+        "DisplayName":  "IntelliTraceProfilerProxy",
+        "DisplayVersion":  "15.0.21225.01",
+        "NameVersionPair":  "IntelliTraceProfilerProxy15.0.21225.01"
+    },
+    {
+        "DisplayName":  "Java SE Development Kit 8 Update 211 (64-bit)",
+        "DisplayVersion":  "8.0.2110.12",
+        "NameVersionPair":  "Java SE Development Kit 8 Update 211 (64-bit)8.0.2110.12"
+    },
+    {
+        "DisplayName":  "Kits Configuration Installer",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Kits Configuration Installer10.1.22000.832"
+    },
+    {
+        "DisplayName":  "Microsoft .NET 6.0 Templates 7.0.100 (x64)",
+        "DisplayVersion":  "24.7.57200",
+        "NameVersionPair":  "Microsoft .NET 6.0 Templates 7.0.100 (x64)24.7.57200"
+    },
+    {
+        "DisplayName":  "Microsoft .NET 7.0 Templates 7.0.100 (x64)",
+        "DisplayVersion":  "28.5.24432",
+        "NameVersionPair":  "Microsoft .NET 7.0 Templates 7.0.100 (x64)28.5.24432"
+    },
+    {
+        "DisplayName":  "Microsoft .NET AppHost Pack - 6.0.11 (x64)",
+        "DisplayVersion":  "48.47.50420",
+        "NameVersionPair":  "Microsoft .NET AppHost Pack - 6.0.11 (x64)48.47.50420"
+    },
+    {
+        "DisplayName":  "Microsoft .NET AppHost Pack - 6.0.11 (x64_arm)",
+        "DisplayVersion":  "48.47.50420",
+        "NameVersionPair":  "Microsoft .NET AppHost Pack - 6.0.11 (x64_arm)48.47.50420"
+    },
+    {
+        "DisplayName":  "Microsoft .NET AppHost Pack - 6.0.11 (x64_arm64)",
+        "DisplayVersion":  "48.47.50420",
+        "NameVersionPair":  "Microsoft .NET AppHost Pack - 6.0.11 (x64_arm64)48.47.50420"
+    },
+    {
+        "DisplayName":  "Microsoft .NET AppHost Pack - 6.0.11 (x64_x86)",
+        "DisplayVersion":  "48.47.50420",
+        "NameVersionPair":  "Microsoft .NET AppHost Pack - 6.0.11 (x64_x86)48.47.50420"
+    },
+    {
+        "DisplayName":  "Microsoft .NET AppHost Pack - 7.0.0 (x64)",
+        "DisplayVersion":  "56.3.50341",
+        "NameVersionPair":  "Microsoft .NET AppHost Pack - 7.0.0 (x64)56.3.50341"
+    },
+    {
+        "DisplayName":  "Microsoft .NET AppHost Pack - 7.0.0 (x64_arm)",
+        "DisplayVersion":  "56.3.50341",
+        "NameVersionPair":  "Microsoft .NET AppHost Pack - 7.0.0 (x64_arm)56.3.50341"
+    },
+    {
+        "DisplayName":  "Microsoft .NET AppHost Pack - 7.0.0 (x64_arm64)",
+        "DisplayVersion":  "56.3.50341",
+        "NameVersionPair":  "Microsoft .NET AppHost Pack - 7.0.0 (x64_arm64)56.3.50341"
+    },
+    {
+        "DisplayName":  "Microsoft .NET AppHost Pack - 7.0.0 (x64_x86)",
+        "DisplayVersion":  "56.3.50341",
+        "NameVersionPair":  "Microsoft .NET AppHost Pack - 7.0.0 (x64_x86)56.3.50341"
+    },
+    {
+        "DisplayName":  "Microsoft .NET CoreRuntime For CoreCon",
+        "DisplayVersion":  "1.0.0.0",
+        "NameVersionPair":  "Microsoft .NET CoreRuntime For CoreCon1.0.0.0"
+    },
+    {
+        "DisplayName":  "Microsoft .NET CoreRuntime SDK",
+        "DisplayVersion":  "1.1.27004.0",
+        "NameVersionPair":  "Microsoft .NET CoreRuntime SDK1.1.27004.0"
+    },
+    {
+        "DisplayName":  "Microsoft .NET Framework 4.7.2 Targeting Pack",
+        "DisplayVersion":  "4.7.03062",
+        "NameVersionPair":  "Microsoft .NET Framework 4.7.2 Targeting Pack4.7.03062"
+    },
+    {
+        "DisplayName":  "Microsoft .NET Framework 4.7.2 目标包(简体中文)",
+        "DisplayVersion":  "4.7.03062",
+        "NameVersionPair":  "Microsoft .NET Framework 4.7.2 目标包(简体中文)4.7.03062"
+    },
+    {
+        "DisplayName":  "Microsoft .NET Framework 4.8 SDK (简体中文)",
+        "DisplayVersion":  "4.8.03761",
+        "NameVersionPair":  "Microsoft .NET Framework 4.8 SDK (简体中文)4.8.03761"
+    },
+    {
+        "DisplayName":  "Microsoft .NET Framework 4.8 SDK",
+        "DisplayVersion":  "4.8.03928",
+        "NameVersionPair":  "Microsoft .NET Framework 4.8 SDK4.8.03928"
+    },
+    {
+        "DisplayName":  "Microsoft .NET Framework 4.8 Targeting Pack",
+        "DisplayVersion":  "4.8.03761",
+        "NameVersionPair":  "Microsoft .NET Framework 4.8 Targeting Pack4.8.03761"
+    },
+    {
+        "DisplayName":  "Microsoft .NET Framework 4.8 目标包(简体中文)",
+        "DisplayVersion":  "4.8.03761",
+        "NameVersionPair":  "Microsoft .NET Framework 4.8 目标包(简体中文)4.8.03761"
+    },
+    {
+        "DisplayName":  "Microsoft .NET Framework Cumulative Intellisense Pack for Visual Studio (简体中文)",
+        "DisplayVersion":  "4.8.09037",
+        "NameVersionPair":  "Microsoft .NET Framework Cumulative Intellisense Pack for Visual Studio (简体中文)4.8.09037"
+    },
+    {
+        "DisplayName":  "Microsoft .NET Host - 7.0.0 (x64)",
+        "DisplayVersion":  "56.3.50341",
+        "NameVersionPair":  "Microsoft .NET Host - 7.0.0 (x64)56.3.50341"
+    },
+    {
+        "DisplayName":  "Microsoft .NET Host - 7.0.0 (x86)",
+        "DisplayVersion":  "56.3.50341",
+        "NameVersionPair":  "Microsoft .NET Host - 7.0.0 (x86)56.3.50341"
+    },
+    {
+        "DisplayName":  "Microsoft .NET Host FX Resolver - 7.0.0 (x64)",
+        "DisplayVersion":  "56.3.50341",
+        "NameVersionPair":  "Microsoft .NET Host FX Resolver - 7.0.0 (x64)56.3.50341"
+    },
+    {
+        "DisplayName":  "Microsoft .NET Host FX Resolver - 7.0.0 (x86)",
+        "DisplayVersion":  "56.3.50341",
+        "NameVersionPair":  "Microsoft .NET Host FX Resolver - 7.0.0 (x86)56.3.50341"
+    },
+    {
+        "DisplayName":  "Microsoft .NET Native SDK",
+        "DisplayVersion":  "15.0.24211.07",
+        "NameVersionPair":  "Microsoft .NET Native SDK15.0.24211.07"
+    },
+    {
+        "DisplayName":  "Microsoft .NET Runtime - 6.0.11 (x64)",
+        "DisplayVersion":  "48.47.50420",
+        "NameVersionPair":  "Microsoft .NET Runtime - 6.0.11 (x64)48.47.50420"
+    },
+    {
+        "DisplayName":  "Microsoft .NET Runtime - 6.0.11 (x86)",
+        "DisplayVersion":  "48.47.50420",
+        "NameVersionPair":  "Microsoft .NET Runtime - 6.0.11 (x86)48.47.50420"
+    },
+    {
+        "DisplayName":  "Microsoft .NET Runtime - 7.0.0 (x64)",
+        "DisplayVersion":  "56.3.50341",
+        "NameVersionPair":  "Microsoft .NET Runtime - 7.0.0 (x64)56.3.50341"
+    },
+    {
+        "DisplayName":  "Microsoft .NET Runtime - 7.0.0 (x86)",
+        "DisplayVersion":  "56.3.50341",
+        "NameVersionPair":  "Microsoft .NET Runtime - 7.0.0 (x86)56.3.50341"
+    },
+    {
+        "DisplayName":  "Microsoft .NET SDK 7.0.100 (x64) from Visual Studio",
+        "DisplayVersion":  "7.1.22.52112",
+        "NameVersionPair":  "Microsoft .NET SDK 7.0.100 (x64) from Visual Studio7.1.22.52112"
+    },
+    {
+        "DisplayName":  "Microsoft .NET Standard Targeting Pack - 2.1.0 (x64)",
+        "DisplayVersion":  "24.0.28113",
+        "NameVersionPair":  "Microsoft .NET Standard Targeting Pack - 2.1.0 (x64)24.0.28113"
+    },
+    {
+        "DisplayName":  "Microsoft .NET Targeting Pack - 6.0.11 (x64)",
+        "DisplayVersion":  "48.47.50420",
+        "NameVersionPair":  "Microsoft .NET Targeting Pack - 6.0.11 (x64)48.47.50420"
+    },
+    {
+        "DisplayName":  "Microsoft .NET Targeting Pack - 6.0.11 (x86)",
+        "DisplayVersion":  "48.47.50420",
+        "NameVersionPair":  "Microsoft .NET Targeting Pack - 6.0.11 (x86)48.47.50420"
+    },
+    {
+        "DisplayName":  "Microsoft .NET Targeting Pack - 7.0.0 (x64)",
+        "DisplayVersion":  "56.3.50341",
+        "NameVersionPair":  "Microsoft .NET Targeting Pack - 7.0.0 (x64)56.3.50341"
+    },
+    {
+        "DisplayName":  "Microsoft .NET Targeting Pack - 7.0.0 (x86)",
+        "DisplayVersion":  "56.3.50341",
+        "NameVersionPair":  "Microsoft .NET Targeting Pack - 7.0.0 (x86)56.3.50341"
+    },
+    {
+        "DisplayName":  "Microsoft .NET Toolset 7.0.100 (x64)",
+        "DisplayVersion":  "28.5.24432",
+        "NameVersionPair":  "Microsoft .NET Toolset 7.0.100 (x64)28.5.24432"
+    },
+    {
+        "DisplayName":  "Microsoft ASP.NET Core 6.0.11 Shared Framework (x64)",
+        "DisplayVersion":  "6.0.11.22523",
+        "NameVersionPair":  "Microsoft ASP.NET Core 6.0.11 Shared Framework (x64)6.0.11.22523"
+    },
+    {
+        "DisplayName":  "Microsoft ASP.NET Core 6.0.11 Shared Framework (x86)",
+        "DisplayVersion":  "6.0.11.22523",
+        "NameVersionPair":  "Microsoft ASP.NET Core 6.0.11 Shared Framework (x86)6.0.11.22523"
+    },
+    {
+        "DisplayName":  "Microsoft ASP.NET Core 6.0.11 Targeting Pack (x64)",
+        "DisplayVersion":  "6.0.11.22523",
+        "NameVersionPair":  "Microsoft ASP.NET Core 6.0.11 Targeting Pack (x64)6.0.11.22523"
+    },
+    {
+        "DisplayName":  "Microsoft ASP.NET Core 6.0.11 Targeting Pack (x86)",
+        "DisplayVersion":  "6.0.11.22523",
+        "NameVersionPair":  "Microsoft ASP.NET Core 6.0.11 Targeting Pack (x86)6.0.11.22523"
+    },
+    {
+        "DisplayName":  "Microsoft ASP.NET Core 7.0.0 Shared Framework (x64)",
+        "DisplayVersion":  "7.0.0.22518",
+        "NameVersionPair":  "Microsoft ASP.NET Core 7.0.0 Shared Framework (x64)7.0.0.22518"
+    },
+    {
+        "DisplayName":  "Microsoft ASP.NET Core 7.0.0 Shared Framework (x86)",
+        "DisplayVersion":  "7.0.0.22518",
+        "NameVersionPair":  "Microsoft ASP.NET Core 7.0.0 Shared Framework (x86)7.0.0.22518"
+    },
+    {
+        "DisplayName":  "Microsoft ASP.NET Core 7.0.0 Targeting Pack (x64)",
+        "DisplayVersion":  "7.0.0.22518",
+        "NameVersionPair":  "Microsoft ASP.NET Core 7.0.0 Targeting Pack (x64)7.0.0.22518"
+    },
+    {
+        "DisplayName":  "Microsoft ASP.NET Core 7.0.0 Targeting Pack (x86)",
+        "DisplayVersion":  "7.0.0.22518",
+        "NameVersionPair":  "Microsoft ASP.NET Core 7.0.0 Targeting Pack (x86)7.0.0.22518"
+    },
+    {
+        "DisplayName":  "Microsoft Edge Update",
+        "DisplayVersion":  "1.3.173.55",
+        "NameVersionPair":  "Microsoft Edge Update1.3.173.55"
+    },
+    {
+        "DisplayName":  "Microsoft Edge WebView2 Runtime",
+        "DisplayVersion":  "112.0.1722.68",
+        "NameVersionPair":  "Microsoft Edge WebView2 Runtime112.0.1722.68"
+    },
+    {
+        "DisplayName":  "Microsoft Edge",
+        "DisplayVersion":  "112.0.1722.68",
+        "NameVersionPair":  "Microsoft Edge112.0.1722.68"
+    },
+    {
+        "DisplayName":  "Microsoft NetStandard SDK",
+        "DisplayVersion":  "15.0.51105",
+        "NameVersionPair":  "Microsoft NetStandard SDK15.0.51105"
+    },
+    {
+        "DisplayName":  "Microsoft Office 家庭和学生版 2021 - zh-cn",
+        "DisplayVersion":  "16.0.16327.20214",
+        "NameVersionPair":  "Microsoft Office 家庭和学生版 2021 - zh-cn16.0.16327.20214"
+    },
+    {
+        "DisplayName":  "Microsoft OneDrive",
+        "DisplayVersion":  "23.081.0416.0001",
+        "NameVersionPair":  "Microsoft OneDrive23.081.0416.0001"
+    },
+    {
+        "DisplayName":  "Microsoft OneNote - zh-cn",
+        "DisplayVersion":  "16.0.16327.20214",
+        "NameVersionPair":  "Microsoft OneNote - zh-cn16.0.16327.20214"
+    },
+    {
+        "DisplayName":  "Microsoft System CLR Types for SQL Server 2019",
+        "DisplayVersion":  "15.0.2000.5",
+        "NameVersionPair":  "Microsoft System CLR Types for SQL Server 201915.0.2000.5"
+    },
+    {
+        "DisplayName":  "Microsoft TestPlatform SDK Local Feed",
+        "DisplayVersion":  "17.0.0.5175695",
+        "NameVersionPair":  "Microsoft TestPlatform SDK Local Feed17.0.0.5175695"
+    },
+    {
+        "DisplayName":  "Microsoft UniversalWindowsPlatform SDK",
+        "DisplayVersion":  "15.9.16",
+        "NameVersionPair":  "Microsoft UniversalWindowsPlatform SDK15.9.16"
+    },
+    {
+        "DisplayName":  "Microsoft Update Health Tools",
+        "DisplayVersion":  "5.69.0.0",
+        "NameVersionPair":  "Microsoft Update Health Tools5.69.0.0"
+    },
+    {
+        "DisplayName":  "Microsoft Visual C++ 2010  x64 Redistributable - 10.0.30319",
+        "DisplayVersion":  "10.0.30319",
+        "NameVersionPair":  "Microsoft Visual C++ 2010  x64 Redistributable - 10.0.3031910.0.30319"
+    },
+    {
+        "DisplayName":  "Microsoft Visual C++ 2010  x86 Redistributable - 10.0.30319",
+        "DisplayVersion":  "10.0.30319",
+        "NameVersionPair":  "Microsoft Visual C++ 2010  x86 Redistributable - 10.0.3031910.0.30319"
+    },
+    {
+        "DisplayName":  "Microsoft Visual C++ 2015-2022 Redistributable (x64) - 14.34.31931",
+        "DisplayVersion":  "14.34.31931.0",
+        "NameVersionPair":  "Microsoft Visual C++ 2015-2022 Redistributable (x64) - 14.34.3193114.34.31931.0"
+    },
+    {
+        "DisplayName":  "Microsoft Visual C++ 2015-2022 Redistributable (x86) - 14.34.31931",
+        "DisplayVersion":  "14.34.31931.0",
+        "NameVersionPair":  "Microsoft Visual C++ 2015-2022 Redistributable (x86) - 14.34.3193114.34.31931.0"
+    },
+    {
+        "DisplayName":  "Microsoft Visual C++ 2022 X64 Additional Runtime - 14.34.31931",
+        "DisplayVersion":  "14.34.31931",
+        "NameVersionPair":  "Microsoft Visual C++ 2022 X64 Additional Runtime - 14.34.3193114.34.31931"
+    },
+    {
+        "DisplayName":  "Microsoft Visual C++ 2022 X64 Debug Runtime - 14.34.31931",
+        "DisplayVersion":  "14.34.31931",
+        "NameVersionPair":  "Microsoft Visual C++ 2022 X64 Debug Runtime - 14.34.3193114.34.31931"
+    },
+    {
+        "DisplayName":  "Microsoft Visual C++ 2022 X64 Minimum Runtime - 14.34.31931",
+        "DisplayVersion":  "14.34.31931",
+        "NameVersionPair":  "Microsoft Visual C++ 2022 X64 Minimum Runtime - 14.34.3193114.34.31931"
+    },
+    {
+        "DisplayName":  "Microsoft Visual C++ 2022 X86 Additional Runtime - 14.34.31931",
+        "DisplayVersion":  "14.34.31931",
+        "NameVersionPair":  "Microsoft Visual C++ 2022 X86 Additional Runtime - 14.34.3193114.34.31931"
+    },
+    {
+        "DisplayName":  "Microsoft Visual C++ 2022 X86 Debug Runtime - 14.34.31931",
+        "DisplayVersion":  "14.34.31931",
+        "NameVersionPair":  "Microsoft Visual C++ 2022 X86 Debug Runtime - 14.34.3193114.34.31931"
+    },
+    {
+        "DisplayName":  "Microsoft Visual C++ 2022 X86 Minimum Runtime - 14.34.31931",
+        "DisplayVersion":  "14.34.31931",
+        "NameVersionPair":  "Microsoft Visual C++ 2022 X86 Minimum Runtime - 14.34.3193114.34.31931"
+    },
+    {
+        "DisplayName":  "Microsoft Visual Studio Installer",
+        "DisplayVersion":  "3.4.2244.14676",
+        "NameVersionPair":  "Microsoft Visual Studio Installer3.4.2244.14676"
+    },
+    {
+        "DisplayName":  "Microsoft Visual Studio Setup Configuration",
+        "DisplayVersion":  "3.4.1128.26111",
+        "NameVersionPair":  "Microsoft Visual Studio Setup Configuration3.4.1128.26111"
+    },
+    {
+        "DisplayName":  "Microsoft Visual Studio Setup WMI Provider",
+        "DisplayVersion":  "3.4.1128.26111",
+        "NameVersionPair":  "Microsoft Visual Studio Setup WMI Provider3.4.1128.26111"
+    },
+    {
+        "DisplayName":  "Microsoft Windows Desktop Runtime - 6.0.11 (x64)",
+        "DisplayVersion":  "48.47.50419",
+        "NameVersionPair":  "Microsoft Windows Desktop Runtime - 6.0.11 (x64)48.47.50419"
+    },
+    {
+        "DisplayName":  "Microsoft Windows Desktop Runtime - 6.0.11 (x86)",
+        "DisplayVersion":  "48.47.50419",
+        "NameVersionPair":  "Microsoft Windows Desktop Runtime - 6.0.11 (x86)48.47.50419"
+    },
+    {
+        "DisplayName":  "Microsoft Windows Desktop Runtime - 7.0.0 (x64)",
+        "DisplayVersion":  "56.3.50353",
+        "NameVersionPair":  "Microsoft Windows Desktop Runtime - 7.0.0 (x64)56.3.50353"
+    },
+    {
+        "DisplayName":  "Microsoft Windows Desktop Runtime - 7.0.0 (x86)",
+        "DisplayVersion":  "56.3.50353",
+        "NameVersionPair":  "Microsoft Windows Desktop Runtime - 7.0.0 (x86)56.3.50353"
+    },
+    {
+        "DisplayName":  "Microsoft Windows Desktop Targeting Pack - 6.0.11 (x64)",
+        "DisplayVersion":  "48.47.50419",
+        "NameVersionPair":  "Microsoft Windows Desktop Targeting Pack - 6.0.11 (x64)48.47.50419"
+    },
+    {
+        "DisplayName":  "Microsoft Windows Desktop Targeting Pack - 6.0.11 (x86)",
+        "DisplayVersion":  "48.47.50419",
+        "NameVersionPair":  "Microsoft Windows Desktop Targeting Pack - 6.0.11 (x86)48.47.50419"
+    },
+    {
+        "DisplayName":  "Microsoft Windows Desktop Targeting Pack - 7.0.0 (x64)",
+        "DisplayVersion":  "56.3.50353",
+        "NameVersionPair":  "Microsoft Windows Desktop Targeting Pack - 7.0.0 (x64)56.3.50353"
+    },
+    {
+        "DisplayName":  "Microsoft Windows Desktop Targeting Pack - 7.0.0 (x86)",
+        "DisplayVersion":  "56.3.50353",
+        "NameVersionPair":  "Microsoft Windows Desktop Targeting Pack - 7.0.0 (x86)56.3.50353"
+    },
+    {
+        "DisplayName":  "Microsoft.NET.Sdk.Android.Manifest-7.0.100 (x64)",
+        "DisplayVersion":  "33.0.4",
+        "NameVersionPair":  "Microsoft.NET.Sdk.Android.Manifest-7.0.100 (x64)33.0.4"
+    },
+    {
+        "DisplayName":  "Microsoft.NET.Sdk.iOS.Manifest-7.0.100 (x64)",
+        "DisplayVersion":  "16.0.0",
+        "NameVersionPair":  "Microsoft.NET.Sdk.iOS.Manifest-7.0.100 (x64)16.0.0"
+    },
+    {
+        "DisplayName":  "Microsoft.NET.Sdk.MacCatalyst.Manifest-7.0.100 (x64)",
+        "DisplayVersion":  "15.4.0",
+        "NameVersionPair":  "Microsoft.NET.Sdk.MacCatalyst.Manifest-7.0.100 (x64)15.4.0"
+    },
+    {
+        "DisplayName":  "Microsoft.NET.Sdk.macOS.Manifest-7.0.100 (x64)",
+        "DisplayVersion":  "12.3.0",
+        "NameVersionPair":  "Microsoft.NET.Sdk.macOS.Manifest-7.0.100 (x64)12.3.0"
+    },
+    {
+        "DisplayName":  "Microsoft.NET.Sdk.Maui.Manifest-7.0.100 (x64)",
+        "DisplayVersion":  "7.0.49",
+        "NameVersionPair":  "Microsoft.NET.Sdk.Maui.Manifest-7.0.100 (x64)7.0.49"
+    },
+    {
+        "DisplayName":  "Microsoft.NET.Sdk.tvOS.Manifest-7.0.100 (x64)",
+        "DisplayVersion":  "16.0.0",
+        "NameVersionPair":  "Microsoft.NET.Sdk.tvOS.Manifest-7.0.100 (x64)16.0.0"
+    },
+    {
+        "DisplayName":  "Microsoft.NET.Workload.Emscripten.net6.Manifest (x64)",
+        "DisplayVersion":  "56.31.50225",
+        "NameVersionPair":  "Microsoft.NET.Workload.Emscripten.net6.Manifest (x64)56.31.50225"
+    },
+    {
+        "DisplayName":  "Microsoft.NET.Workload.Emscripten.net7.Manifest (x64)",
+        "DisplayVersion":  "56.31.50225",
+        "NameVersionPair":  "Microsoft.NET.Workload.Emscripten.net7.Manifest (x64)56.31.50225"
+    },
+    {
+        "DisplayName":  "Microsoft.NET.Workload.Mono.Toolchain.net6.Manifest (x64)",
+        "DisplayVersion":  "56.3.50341",
+        "NameVersionPair":  "Microsoft.NET.Workload.Mono.Toolchain.net6.Manifest (x64)56.3.50341"
+    },
+    {
+        "DisplayName":  "Microsoft.NET.Workload.Mono.Toolchain.net7.Manifest (x64)",
+        "DisplayVersion":  "56.3.50341",
+        "NameVersionPair":  "Microsoft.NET.Workload.Mono.Toolchain.net7.Manifest (x64)56.3.50341"
+    },
+    {
+        "DisplayName":  "MSI Development Tools",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "MSI Development Tools10.1.22000.832"
+    },
+    {
+        "DisplayName":  "nn",
+        "DisplayVersion":  "2.01.014.126",
+        "NameVersionPair":  "nn2.01.014.126"
+    },
+    {
+        "DisplayName":  "Npcap",
+        "DisplayVersion":  "1.71",
+        "NameVersionPair":  "Npcap1.71"
+    },
+    {
+        "DisplayName":  "Office 16 Click-to-Run Extensibility Component",
+        "DisplayVersion":  "16.0.16130.20218",
+        "NameVersionPair":  "Office 16 Click-to-Run Extensibility Component16.0.16130.20218"
+    },
+    {
+        "DisplayName":  "Office 16 Click-to-Run Licensing Component",
+        "DisplayVersion":  "16.0.16327.20200",
+        "NameVersionPair":  "Office 16 Click-to-Run Licensing Component16.0.16327.20200"
+    },
+    {
+        "DisplayName":  "Office 16 Click-to-Run Localization Component",
+        "DisplayVersion":  "16.0.16130.20218",
+        "NameVersionPair":  "Office 16 Click-to-Run Localization Component16.0.16130.20218"
+    },
+    {
+        "DisplayName":  "OpenSCAP",
+        "DisplayVersion":  "1.3.4",
+        "NameVersionPair":  "OpenSCAP1.3.4"
+    },
+    {
+        "DisplayName":  "OpenSSL 3.0.8 (32-bit)",
+        "DisplayVersion":  "3.0.8",
+        "NameVersionPair":  "OpenSSL 3.0.8 (32-bit)3.0.8"
+    },
+    {
+        "DisplayName":  "Python 3.11.0 Add to Path (64-bit)",
+        "DisplayVersion":  "3.11.150.0",
+        "NameVersionPair":  "Python 3.11.0 Add to Path (64-bit)3.11.150.0"
+    },
+    {
+        "DisplayName":  "Python 3.11.0 Core Interpreter (64-bit)",
+        "DisplayVersion":  "3.11.150.0",
+        "NameVersionPair":  "Python 3.11.0 Core Interpreter (64-bit)3.11.150.0"
+    },
+    {
+        "DisplayName":  "Python 3.11.0 Development Libraries (64-bit)",
+        "DisplayVersion":  "3.11.150.0",
+        "NameVersionPair":  "Python 3.11.0 Development Libraries (64-bit)3.11.150.0"
+    },
+    {
+        "DisplayName":  "Python 3.11.0 Documentation (64-bit)",
+        "DisplayVersion":  "3.11.150.0",
+        "NameVersionPair":  "Python 3.11.0 Documentation (64-bit)3.11.150.0"
+    },
+    {
+        "DisplayName":  "Python 3.11.0 Executables (64-bit)",
+        "DisplayVersion":  "3.11.150.0",
+        "NameVersionPair":  "Python 3.11.0 Executables (64-bit)3.11.150.0"
+    },
+    {
+        "DisplayName":  "Python 3.11.0 pip Bootstrap (64-bit)",
+        "DisplayVersion":  "3.11.150.0",
+        "NameVersionPair":  "Python 3.11.0 pip Bootstrap (64-bit)3.11.150.0"
+    },
+    {
+        "DisplayName":  "Python 3.11.0 Standard Library (64-bit)",
+        "DisplayVersion":  "3.11.150.0",
+        "NameVersionPair":  "Python 3.11.0 Standard Library (64-bit)3.11.150.0"
+    },
+    {
+        "DisplayName":  "Python 3.11.0 Tcl/Tk Support (64-bit)",
+        "DisplayVersion":  "3.11.150.0",
+        "NameVersionPair":  "Python 3.11.0 Tcl/Tk Support (64-bit)3.11.150.0"
+    },
+    {
+        "DisplayName":  "Python 3.11.0 Test Suite (64-bit)",
+        "DisplayVersion":  "3.11.150.0",
+        "NameVersionPair":  "Python 3.11.0 Test Suite (64-bit)3.11.150.0"
+    },
+    {
+        "DisplayName":  "Python 3.11.0 Utility Scripts (64-bit)",
+        "DisplayVersion":  "3.11.150.0",
+        "NameVersionPair":  "Python 3.11.0 Utility Scripts (64-bit)3.11.150.0"
+    },
+    {
+        "DisplayName":  "Python 3.9.7 Core Interpreter (64-bit symbols)",
+        "DisplayVersion":  "3.9.7150.0",
+        "NameVersionPair":  "Python 3.9.7 Core Interpreter (64-bit symbols)3.9.7150.0"
+    },
+    {
+        "DisplayName":  "Python 3.9.7 Core Interpreter (64-bit)",
+        "DisplayVersion":  "3.9.7150.0",
+        "NameVersionPair":  "Python 3.9.7 Core Interpreter (64-bit)3.9.7150.0"
+    },
+    {
+        "DisplayName":  "Python 3.9.7 Development Libraries (64-bit)",
+        "DisplayVersion":  "3.9.7150.0",
+        "NameVersionPair":  "Python 3.9.7 Development Libraries (64-bit)3.9.7150.0"
+    },
+    {
+        "DisplayName":  "Python 3.9.7 Documentation (64-bit)",
+        "DisplayVersion":  "3.9.7150.0",
+        "NameVersionPair":  "Python 3.9.7 Documentation (64-bit)3.9.7150.0"
+    },
+    {
+        "DisplayName":  "Python 3.9.7 Executables (64-bit symbols)",
+        "DisplayVersion":  "3.9.7150.0",
+        "NameVersionPair":  "Python 3.9.7 Executables (64-bit symbols)3.9.7150.0"
+    },
+    {
+        "DisplayName":  "Python 3.9.7 Executables (64-bit)",
+        "DisplayVersion":  "3.9.7150.0",
+        "NameVersionPair":  "Python 3.9.7 Executables (64-bit)3.9.7150.0"
+    },
+    {
+        "DisplayName":  "Python 3.9.7 pip Bootstrap (64-bit)",
+        "DisplayVersion":  "3.9.7150.0",
+        "NameVersionPair":  "Python 3.9.7 pip Bootstrap (64-bit)3.9.7150.0"
+    },
+    {
+        "DisplayName":  "Python 3.9.7 Standard Library (64-bit symbols)",
+        "DisplayVersion":  "3.9.7150.0",
+        "NameVersionPair":  "Python 3.9.7 Standard Library (64-bit symbols)3.9.7150.0"
+    },
+    {
+        "DisplayName":  "Python 3.9.7 Standard Library (64-bit)",
+        "DisplayVersion":  "3.9.7150.0",
+        "NameVersionPair":  "Python 3.9.7 Standard Library (64-bit)3.9.7150.0"
+    },
+    {
+        "DisplayName":  "Python 3.9.7 Tcl/Tk Support (64-bit symbols)",
+        "DisplayVersion":  "3.9.7150.0",
+        "NameVersionPair":  "Python 3.9.7 Tcl/Tk Support (64-bit symbols)3.9.7150.0"
+    },
+    {
+        "DisplayName":  "Python 3.9.7 Tcl/Tk Support (64-bit)",
+        "DisplayVersion":  "3.9.7150.0",
+        "NameVersionPair":  "Python 3.9.7 Tcl/Tk Support (64-bit)3.9.7150.0"
+    },
+    {
+        "DisplayName":  "Python 3.9.7 Test Suite (64-bit symbols)",
+        "DisplayVersion":  "3.9.7150.0",
+        "NameVersionPair":  "Python 3.9.7 Test Suite (64-bit symbols)3.9.7150.0"
+    },
+    {
+        "DisplayName":  "Python 3.9.7 Test Suite (64-bit)",
+        "DisplayVersion":  "3.9.7150.0",
+        "NameVersionPair":  "Python 3.9.7 Test Suite (64-bit)3.9.7150.0"
+    },
+    {
+        "DisplayName":  "Python 3.9.7 Utility Scripts (64-bit)",
+        "DisplayVersion":  "3.9.7150.0",
+        "NameVersionPair":  "Python 3.9.7 Utility Scripts (64-bit)3.9.7150.0"
+    },
+    {
+        "DisplayName":  "Python Launcher",
+        "DisplayVersion":  "3.11.7966.0",
+        "NameVersionPair":  "Python Launcher3.11.7966.0"
+    },
+    {
+        "DisplayName":  "Realtek Audio Driver",
+        "DisplayVersion":  "6.0.9225.1",
+        "NameVersionPair":  "Realtek Audio Driver6.0.9225.1"
+    },
+    {
+        "DisplayName":  "SangforVNC",
+        "DisplayVersion":  "7,1,0,2",
+        "NameVersionPair":  "SangforVNC7,1,0,2"
+    },
+    {
+        "DisplayName":  "SDK ARM Additions",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "SDK ARM Additions10.1.22000.832"
+    },
+    {
+        "DisplayName":  "SDK ARM Redistributables",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "SDK ARM Redistributables10.1.22000.832"
+    },
+    {
+        "DisplayName":  "Steam",
+        "DisplayVersion":  "2.10.91.91",
+        "NameVersionPair":  "Steam2.10.91.91"
+    },
+    {
+        "DisplayName":  "Tencent QQMail Plugin",
+        "DisplayVersion":  null,
+        "NameVersionPair":  "Tencent QQMail Plugin"
+    },
+    {
+        "DisplayName":  "Universal CRT Extension SDK",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Universal CRT Extension SDK10.1.22000.832"
+    },
+    {
+        "DisplayName":  "Universal CRT Headers Libraries and Sources",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Universal CRT Headers Libraries and Sources10.1.22000.832"
+    },
+    {
+        "DisplayName":  "Universal CRT Redistributable",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Universal CRT Redistributable10.1.22000.832"
+    },
+    {
+        "DisplayName":  "Universal CRT Tools x64",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Universal CRT Tools x6410.1.22000.832"
+    },
+    {
+        "DisplayName":  "Universal CRT Tools x86",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Universal CRT Tools x8610.1.22000.832"
+    },
+    {
+        "DisplayName":  "Universal General MIDI DLS Extension SDK",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Universal General MIDI DLS Extension SDK10.1.22000.832"
+    },
+    {
+        "DisplayName":  "vcpp_crt.redist.clickonce",
+        "DisplayVersion":  "14.34.31931",
+        "NameVersionPair":  "vcpp_crt.redist.clickonce14.34.31931"
+    },
+    {
+        "DisplayName":  "Visual C++ Library CRT Appx Package",
+        "DisplayVersion":  "14.34.31933",
+        "NameVersionPair":  "Visual C++ Library CRT Appx Package14.34.31933"
+    },
+    {
+        "DisplayName":  "Visual C++ Library CRT Appx Resource Package",
+        "DisplayVersion":  "14.34.31933",
+        "NameVersionPair":  "Visual C++ Library CRT Appx Resource Package14.34.31933"
+    },
+    {
+        "DisplayName":  "Visual C++ Library CRT ARM64 Appx Package",
+        "DisplayVersion":  "14.34.31933",
+        "NameVersionPair":  "Visual C++ Library CRT ARM64 Appx Package14.34.31933"
+    },
+    {
+        "DisplayName":  "Visual C++ Library CRT Desktop Appx Package",
+        "DisplayVersion":  "14.34.31933",
+        "NameVersionPair":  "Visual C++ Library CRT Desktop Appx Package14.34.31933"
+    },
+    {
+        "DisplayName":  "Visual Studio Community 2022",
+        "DisplayVersion":  "17.4.0",
+        "NameVersionPair":  "Visual Studio Community 202217.4.0"
+    },
+    {
+        "DisplayName":  "VMware Workstation",
+        "DisplayVersion":  "16.2.4",
+        "NameVersionPair":  "VMware Workstation16.2.4"
+    },
+    {
+        "DisplayName":  "VS Immersive Activate Helper",
+        "DisplayVersion":  "17.0.118.0",
+        "NameVersionPair":  "VS Immersive Activate Helper17.0.118.0"
+    },
+    {
+        "DisplayName":  "VS JIT Debugger",
+        "DisplayVersion":  "17.0.118.0",
+        "NameVersionPair":  "VS JIT Debugger17.0.118.0"
+    },
+    {
+        "DisplayName":  "VS Script Debugging Common",
+        "DisplayVersion":  "17.0.118.0",
+        "NameVersionPair":  "VS Script Debugging Common17.0.118.0"
+    },
+    {
+        "DisplayName":  "vs_BlendMsi",
+        "DisplayVersion":  "17.4.33006",
+        "NameVersionPair":  "vs_BlendMsi17.4.33006"
+    },
+    {
+        "DisplayName":  "vs_clickoncebootstrappermsi",
+        "DisplayVersion":  "17.4.33006",
+        "NameVersionPair":  "vs_clickoncebootstrappermsi17.4.33006"
+    },
+    {
+        "DisplayName":  "vs_clickoncebootstrappermsires",
+        "DisplayVersion":  "17.4.33006",
+        "NameVersionPair":  "vs_clickoncebootstrappermsires17.4.33006"
+    },
+    {
+        "DisplayName":  "vs_clickoncesigntoolmsi",
+        "DisplayVersion":  "17.4.33006",
+        "NameVersionPair":  "vs_clickoncesigntoolmsi17.4.33006"
+    },
+    {
+        "DisplayName":  "vs_communitymsires",
+        "DisplayVersion":  "17.4.33006",
+        "NameVersionPair":  "vs_communitymsires17.4.33006"
+    },
+    {
+        "DisplayName":  "vs_communitysharedmsi",
+        "DisplayVersion":  "17.4.33006",
+        "NameVersionPair":  "vs_communitysharedmsi17.4.33006"
+    },
+    {
+        "DisplayName":  "vs_communityx64msi",
+        "DisplayVersion":  "17.4.33006",
+        "NameVersionPair":  "vs_communityx64msi17.4.33006"
+    },
+    {
+        "DisplayName":  "vs_CoreEditorFonts",
+        "DisplayVersion":  "17.4.33006",
+        "NameVersionPair":  "vs_CoreEditorFonts17.4.33006"
+    },
+    {
+        "DisplayName":  "vs_devenvsharedmsi",
+        "DisplayVersion":  "17.4.33006",
+        "NameVersionPair":  "vs_devenvsharedmsi17.4.33006"
+    },
+    {
+        "DisplayName":  "vs_devenx64vmsi",
+        "DisplayVersion":  "17.4.33006",
+        "NameVersionPair":  "vs_devenx64vmsi17.4.33006"
+    },
+    {
+        "DisplayName":  "vs_filehandler_amd64",
+        "DisplayVersion":  "17.4.33006",
+        "NameVersionPair":  "vs_filehandler_amd6417.4.33006"
+    },
+    {
+        "DisplayName":  "vs_filehandler_x86",
+        "DisplayVersion":  "17.4.33006",
+        "NameVersionPair":  "vs_filehandler_x8617.4.33006"
+    },
+    {
+        "DisplayName":  "vs_FileTracker_Singleton",
+        "DisplayVersion":  "17.4.33006",
+        "NameVersionPair":  "vs_FileTracker_Singleton17.4.33006"
+    },
+    {
+        "DisplayName":  "vs_Graphics_Singletonx64",
+        "DisplayVersion":  "17.4.33006",
+        "NameVersionPair":  "vs_Graphics_Singletonx6417.4.33006"
+    },
+    {
+        "DisplayName":  "vs_Graphics_Singletonx86",
+        "DisplayVersion":  "17.4.33006",
+        "NameVersionPair":  "vs_Graphics_Singletonx8617.4.33006"
+    },
+    {
+        "DisplayName":  "vs_minshellinteropsharedmsi",
+        "DisplayVersion":  "17.4.33006",
+        "NameVersionPair":  "vs_minshellinteropsharedmsi17.4.33006"
+    },
+    {
+        "DisplayName":  "vs_minshellinteropx64msi",
+        "DisplayVersion":  "17.4.33006",
+        "NameVersionPair":  "vs_minshellinteropx64msi17.4.33006"
+    },
+    {
+        "DisplayName":  "vs_minshellmsires",
+        "DisplayVersion":  "17.4.33006",
+        "NameVersionPair":  "vs_minshellmsires17.4.33006"
+    },
+    {
+        "DisplayName":  "vs_minshellsharedmsi",
+        "DisplayVersion":  "17.4.33006",
+        "NameVersionPair":  "vs_minshellsharedmsi17.4.33006"
+    },
+    {
+        "DisplayName":  "vs_minshellx64msi",
+        "DisplayVersion":  "17.4.33006",
+        "NameVersionPair":  "vs_minshellx64msi17.4.33006"
+    },
+    {
+        "DisplayName":  "vs_SQLClickOnceBootstrappermsi",
+        "DisplayVersion":  "17.4.33006",
+        "NameVersionPair":  "vs_SQLClickOnceBootstrappermsi17.4.33006"
+    },
+    {
+        "DisplayName":  "vs_tipsmsi",
+        "DisplayVersion":  "17.4.33006",
+        "NameVersionPair":  "vs_tipsmsi17.4.33006"
+    },
+    {
+        "DisplayName":  "vs_vswebprotocolselectormsi",
+        "DisplayVersion":  "17.4.33006",
+        "NameVersionPair":  "vs_vswebprotocolselectormsi17.4.33006"
+    },
+    {
+        "DisplayName":  "vs_vswebprotocolselectormsires",
+        "DisplayVersion":  "17.4.33006",
+        "NameVersionPair":  "vs_vswebprotocolselectormsires17.4.33006"
+    },
+    {
+        "DisplayName":  "WeGame",
+        "DisplayVersion":  null,
+        "NameVersionPair":  "WeGame"
+    },
+    {
+        "DisplayName":  "WinAppDeploy",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "WinAppDeploy10.1.22000.832"
+    },
+    {
+        "DisplayName":  "Windows App Certification Kit Native Components",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Windows App Certification Kit Native Components10.1.22000.832"
+    },
+    {
+        "DisplayName":  "Windows App Certification Kit SupportedApiList x86",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Windows App Certification Kit SupportedApiList x8610.1.22000.832"
+    },
+    {
+        "DisplayName":  "Windows App Certification Kit x64",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Windows App Certification Kit x6410.1.22000.832"
+    },
+    {
+        "DisplayName":  "Windows Desktop Extension SDK Contracts",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Windows Desktop Extension SDK Contracts10.1.22000.832"
+    },
+    {
+        "DisplayName":  "Windows Desktop Extension SDK",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Windows Desktop Extension SDK10.1.22000.832"
+    },
+    {
+        "DisplayName":  "Windows IoT Extension SDK Contracts",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Windows IoT Extension SDK Contracts10.1.22000.832"
+    },
+    {
+        "DisplayName":  "Windows IoT Extension SDK",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Windows IoT Extension SDK10.1.22000.832"
+    },
+    {
+        "DisplayName":  "Windows Mobile Extension SDK Contracts",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Windows Mobile Extension SDK Contracts10.1.22000.832"
+    },
+    {
+        "DisplayName":  "Windows Mobile Extension SDK",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Windows Mobile Extension SDK10.1.22000.832"
+    },
+    {
+        "DisplayName":  "Windows SDK AddOn",
+        "DisplayVersion":  "10.1.0.0",
+        "NameVersionPair":  "Windows SDK AddOn10.1.0.0"
+    },
+    {
+        "DisplayName":  "Windows SDK ARM Desktop Tools",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Windows SDK ARM Desktop Tools10.1.22000.832"
+    },
+    {
+        "DisplayName":  "Windows SDK Desktop Headers arm",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Windows SDK Desktop Headers arm10.1.22000.832"
+    },
+    {
+        "DisplayName":  "Windows SDK Desktop Headers arm64",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Windows SDK Desktop Headers arm6410.1.22000.832"
+    },
+    {
+        "DisplayName":  "Windows SDK Desktop Headers x64",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Windows SDK Desktop Headers x6410.1.22000.832"
+    },
+    {
+        "DisplayName":  "Windows SDK Desktop Headers x86",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Windows SDK Desktop Headers x8610.1.22000.832"
+    },
+    {
+        "DisplayName":  "Windows SDK Desktop Libs arm",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Windows SDK Desktop Libs arm10.1.22000.832"
+    },
+    {
+        "DisplayName":  "Windows SDK Desktop Libs arm64",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Windows SDK Desktop Libs arm6410.1.22000.832"
+    },
+    {
+        "DisplayName":  "Windows SDK Desktop Libs x64",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Windows SDK Desktop Libs x6410.1.22000.832"
+    },
+    {
+        "DisplayName":  "Windows SDK Desktop Libs x86",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Windows SDK Desktop Libs x8610.1.22000.832"
+    },
+    {
+        "DisplayName":  "Windows SDK Desktop Tools arm64",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Windows SDK Desktop Tools arm6410.1.22000.832"
+    },
+    {
+        "DisplayName":  "Windows SDK Desktop Tools x64",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Windows SDK Desktop Tools x6410.1.22000.832"
+    },
+    {
+        "DisplayName":  "Windows SDK Desktop Tools x86",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Windows SDK Desktop Tools x8610.1.22000.832"
+    },
+    {
+        "DisplayName":  "Windows SDK DirectX x64 Remote",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Windows SDK DirectX x64 Remote10.1.22000.832"
+    },
+    {
+        "DisplayName":  "Windows SDK DirectX x86 Remote",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Windows SDK DirectX x86 Remote10.1.22000.832"
+    },
+    {
+        "DisplayName":  "Windows SDK EULA",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Windows SDK EULA10.1.22000.832"
+    },
+    {
+        "DisplayName":  "Windows SDK Facade Windows WinMD Versioned",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Windows SDK Facade Windows WinMD Versioned10.1.22000.832"
+    },
+    {
+        "DisplayName":  "Windows SDK for Windows Store Apps Contracts",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Windows SDK for Windows Store Apps Contracts10.1.22000.832"
+    },
+    {
+        "DisplayName":  "Windows SDK for Windows Store Apps DirectX x86 Remote",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Windows SDK for Windows Store Apps DirectX x86 Remote10.1.22000.832"
+    },
+    {
+        "DisplayName":  "Windows SDK for Windows Store Apps Headers",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Windows SDK for Windows Store Apps Headers10.1.22000.832"
+    },
+    {
+        "DisplayName":  "Windows SDK for Windows Store Apps Libs",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Windows SDK for Windows Store Apps Libs10.1.22000.832"
+    },
+    {
+        "DisplayName":  "Windows SDK for Windows Store Apps Metadata",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Windows SDK for Windows Store Apps Metadata10.1.22000.832"
+    },
+    {
+        "DisplayName":  "Windows SDK for Windows Store Apps Tools",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Windows SDK for Windows Store Apps Tools10.1.22000.832"
+    },
+    {
+        "DisplayName":  "Windows SDK for Windows Store Apps",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Windows SDK for Windows Store Apps10.1.22000.832"
+    },
+    {
+        "DisplayName":  "Windows SDK for Windows Store Managed Apps Libs",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Windows SDK for Windows Store Managed Apps Libs10.1.22000.832"
+    },
+    {
+        "DisplayName":  "Windows SDK Modern Non-Versioned Developer Tools",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Windows SDK Modern Non-Versioned Developer Tools10.1.22000.832"
+    },
+    {
+        "DisplayName":  "Windows SDK Modern Versioned Developer Tools",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Windows SDK Modern Versioned Developer Tools10.1.22000.832"
+    },
+    {
+        "DisplayName":  "Windows SDK Redistributables",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Windows SDK Redistributables10.1.22000.832"
+    },
+    {
+        "DisplayName":  "Windows SDK Signing Tools",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Windows SDK Signing Tools10.1.22000.832"
+    },
+    {
+        "DisplayName":  "Windows SDK",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Windows SDK10.1.22000.832"
+    },
+    {
+        "DisplayName":  "Windows Software Development Kit - Windows 10.0.22000.832",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Windows Software Development Kit - Windows 10.0.22000.83210.1.22000.832"
+    },
+    {
+        "DisplayName":  "Windows Team Extension SDK Contracts",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Windows Team Extension SDK Contracts10.1.22000.832"
+    },
+    {
+        "DisplayName":  "Windows Team Extension SDK",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "Windows Team Extension SDK10.1.22000.832"
+    },
+    {
+        "DisplayName":  "windows_toolscorepkg",
+        "DisplayVersion":  "17.4.33006",
+        "NameVersionPair":  "windows_toolscorepkg17.4.33006"
+    },
+    {
+        "DisplayName":  "WinRAR 6.11 (64-位)",
+        "DisplayVersion":  "6.11.0",
+        "NameVersionPair":  "WinRAR 6.11 (64-位)6.11.0"
+    },
+    {
+        "DisplayName":  "WinRT Intellisense Desktop - en-us",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "WinRT Intellisense Desktop - en-us10.1.22000.832"
+    },
+    {
+        "DisplayName":  "WinRT Intellisense Desktop - Other Languages",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "WinRT Intellisense Desktop - Other Languages10.1.22000.832"
+    },
+    {
+        "DisplayName":  "WinRT Intellisense IoT - en-us",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "WinRT Intellisense IoT - en-us10.1.22000.832"
+    },
+    {
+        "DisplayName":  "WinRT Intellisense IoT - Other Languages",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "WinRT Intellisense IoT - Other Languages10.1.22000.832"
+    },
+    {
+        "DisplayName":  "WinRT Intellisense Mobile - en-us",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "WinRT Intellisense Mobile - en-us10.1.22000.832"
+    },
+    {
+        "DisplayName":  "WinRT Intellisense PPI - en-us",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "WinRT Intellisense PPI - en-us10.1.22000.832"
+    },
+    {
+        "DisplayName":  "WinRT Intellisense PPI - Other Languages",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "WinRT Intellisense PPI - Other Languages10.1.22000.832"
+    },
+    {
+        "DisplayName":  "WinRT Intellisense UAP - en-us",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "WinRT Intellisense UAP - en-us10.1.22000.832"
+    },
+    {
+        "DisplayName":  "WinRT Intellisense UAP - Other Languages",
+        "DisplayVersion":  "10.1.22000.832",
+        "NameVersionPair":  "WinRT Intellisense UAP - Other Languages10.1.22000.832"
+    },
+    {
+        "DisplayName":  "Wireshark 4.0.3 64-bit",
+        "DisplayVersion":  "4.0.3",
+        "NameVersionPair":  "Wireshark 4.0.3 64-bit4.0.3"
+    },
+    {
+        "DisplayName":  "企业微信",
+        "DisplayVersion":  "4.0.20.6009",
+        "NameVersionPair":  "企业微信4.0.20.6009"
+    },
+    {
+        "DisplayName":  "腾讯QQ",
+        "DisplayVersion":  "9.7.3.28946",
+        "NameVersionPair":  "腾讯QQ9.7.3.28946"
+    },
+    {
+        "DisplayName":  "网易UU",
+        "DisplayVersion":  "4.39.0.136",
+        "NameVersionPair":  "网易UU4.39.0.136"
+    },
+    {
+        "DisplayName":  "微软OfficePLUS（公测版）",
+        "DisplayVersion":  "2.5.1.37533",
+        "NameVersionPair":  "微软OfficePLUS（公测版）2.5.1.37533"
+    },
+    {
+        "DisplayName":  "微信",
+        "DisplayVersion":  "3.7.0.29",
+        "NameVersionPair":  "微信3.7.0.29"
+    },
+    {
+        "DisplayName":  "向日葵",
+        "DisplayVersion":  "12.6.0.49095",
+        "NameVersionPair":  "向日葵12.6.0.49095"
+    },
+    {
+        "DisplayName":  "英雄联盟",
+        "DisplayVersion":  null,
+        "NameVersionPair":  "英雄联盟"
+    },
+    {
+        "DisplayName":  "知云文献翻译 版本 7.8.0",
+        "DisplayVersion":  "7.8.0",
+        "NameVersionPair":  "知云文献翻译 版本 7.8.07.8.0"
+    }
+]}
