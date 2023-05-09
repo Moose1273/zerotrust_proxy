@@ -147,7 +147,19 @@ function Invoke-Vulmap {
                             ExploitID              = if ($null -ne $_.exploits) { 'EDB' + ($_.exploits[0].url).Split('{=}')[2] } else { $null }
                             'Exploit Title'        = if ($null -ne $_.exploits) { $_.exploits[0].title } else { $null }
                         }
-                        $global:cvssv2_basescore_sum += $_.cvssv2_basescore
+                        # 评分系统
+                        if($_.cvssv2_basescore -gt 7 -and $_.cvssv2_basescore -lt 10){
+                            $global:cvssv2_basescore_sum += 4
+                        }elseif($_.cvssv2_basescore -gt 4 -and $_.cvssv2_basescore -lt 7){
+                            $global:cvssv2_basescore_sum += 3
+                        }elseif($_.cvssv2_basescore -gt 2 -and $_.cvssv2_basescore -lt 4){
+                            $global:cvssv2_basescore_sum += 2
+                        }elseif($_.cvssv2_basescore -gt 0 -and $_.cvssv2_basescore -lt 2 ){
+                            $global:cvssv2_basescore_sum += 1
+                        }else {
+                            $global:cvssv2_basescore_sum += 0
+                        }
+                        #$global:cvssv2_basescore_sum += $_.cvssv2_basescore
                     }
 
                 if ($OnlyExploitableVulns -Or $DownloadAllExploits) {
@@ -190,6 +202,7 @@ function Invoke-Vulmap {
         else {
             Write-Host "$($vuln_list.Count) vulnerabilities found!" -ForegroundColor Red
             $vuln_list | Format-Table -AutoSize
+            $global:cvssv2_basescore_sum = $global:cvssv2_basescore_sum/$vuln_list.Count
         }
     }
 

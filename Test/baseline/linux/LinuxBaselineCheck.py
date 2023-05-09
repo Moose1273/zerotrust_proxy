@@ -347,6 +347,16 @@ def linux_scan_res_report(scanResDict={}):
     if len(groupsIfHasUniqueGIDArray) == 0:
         pass_Num += 1
     os_check_score = (os_check_sum - pass_Num)/os_check_sum*100
+    if 80 <= os_check_score and os_check_score <= 100:
+        os_check_score = 4
+    elif 60 <= os_check_score:
+        os_check_score = 3
+    elif 40 <= os_check_score:
+        os_check_score = 2
+    elif 0 <= os_check_score:
+        os_check_score = 1
+    else: 
+        os_check_score = 0
     # print("os check score is:",os_check_score)
 
 def sendRequest(queryData, os="Linux", arc="x86_64"):
@@ -412,13 +422,23 @@ def outResults(q, os="Linux", arc="x86_64"):
                         tmpCVEDict['CVEID'] = response['results'][i]['vulnerabilities'][j]['cveid']
                         tmpCVEDict['CVEScore'] = response['results'][i]['vulnerabilities'][j]['cvssv2_basescore']
                         cvssv2_basescore_sum += tmpCVEDict['CVEScore']
+                        if 7 <= tmpCVEDict['CVEScore'] and tmpCVEDict['CVEScore'] <= 10:
+                            cvssv2_basescore_sum += 4
+                        elif 4 <= tmpCVEDict['CVEScore'] and tmpCVEDict['CVEScore'] < 7:
+                            cvssv2_basescore_sum += 3
+                        elif 2 <= tmpCVEDict['CVEScore'] and tmpCVEDict['CVEScore'] < 4:
+                            cvssv2_basescore_sum += 2
+                        elif 0 <= tmpCVEDict['CVEScore'] and tmpCVEDict['CVEScore'] < 2:
+                            cvssv2_basescore_sum += 1
+                        else :
+                            cvssv2_basescore_sum += 0
                         # tmpCVEDict['product']=response['results'][i]['query_string']
                         print(bcolors.OKGREEN +
                               "[*] " + bcolors.ENDC + "Exploit Found!")
                         print(bcolors.OKGREEN + "[>] " + bcolors.ENDC + "Product: " + productFilter(
                             response['results'][i]['query_string']))
                         tmpEXPList = []
-                        # 一个CVE有几个POC
+                        # 一个CVE有几个POC(漏洞证明)
                         for z in range(0, len(response['results'][i]['vulnerabilities'][j]['exploits'])):
                             exploit_sum += 1
                             edb = response['results'][i]['vulnerabilities'][j]['exploits'][z]['url'].split(
@@ -449,6 +469,7 @@ def outResults(q, os="Linux", arc="x86_64"):
 
 
 def vulnCheck(data=[], os="Linux", arc="x86_64"):
+    global cvssv2_basescore_sum
     count = 0
     productExpList = []
     if len(data) == 0:
@@ -472,10 +493,11 @@ def vulnCheck(data=[], os="Linux", arc="x86_64"):
             productExpList.extend(tmpList)
     tmpList = outResults(queryData, os=os, arc=arc)
     productExpList.extend(tmpList)
-    #print(productExpList)
-    print("cvssv2_basescore_sum is:", cvssv2_basescore_sum)
+    cvssv2_basescore_sum = cvssv2_basescore_sum / len(products)
+    # print(productExpList)
+    # print("cvssv2_basescore_sum is:", cvssv2_basescore_sum)
     print("+++++++++++++++++++++++++++++++++++Over++++++++++++++++++++++++++++++++++")
-    return productExpList
+    # return productExpList
 
 
 def productFilter(productName):
@@ -488,8 +510,8 @@ def calculateScore():
     global cvssv2_basescore_sum
     # 分数越高，严重性越高
     print("The final score of Linux baseline check is",
-          os_check_score + cvssv2_basescore_sum)
-    return os_check_score + cvssv2_basescore_sum
+          max(os_check_score,cvssv2_basescore_sum))
+    return max(os_check_score, cvssv2_basescore_sum)
 
 # ==========================================================================
 # CLASS

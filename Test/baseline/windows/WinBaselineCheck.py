@@ -204,6 +204,15 @@ def windows_scan_res_report(windowsScanResDict={}):
     if autoRunRes != "False" and int(autoRunRes) >= 233:
         pass_Num += 1
     win_os_check_score += (win_os_check_sum - pass_Num)/win_os_check_sum*100
+    if 80 <= win_os_check_score and win_os_check_score <= 100:
+        win_os_check_score = 4
+    elif win_os_check_score <= 60:
+        win_os_check_score = 3
+    elif win_os_check_score <= 40:
+        win_os_check_score = 2
+    elif win_os_check_score <= 20:
+        win_os_check_score = 1
+    else: win_os_check_score = 0
     print("win baseline check score is: ",win_os_check_score)
     return win_os_check_score
 

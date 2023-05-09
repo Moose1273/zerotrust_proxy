@@ -140,7 +140,8 @@ def windows_os_vul_res_report(systeminfo):
             cvssv2_osvul += 1
         else:
             cvssv2_osvul += 0
-    print("cvss_score of os_vul is: ",cvssv2_osvul)
+    print("cvss_score of os_vul is: ",cvssv2_osvul/len(filtered))
+    return cvssv2_osvul
 
     # Display results
     # kbs, sp = get_patches_servicepacks(filtered, cves, productfilter)
