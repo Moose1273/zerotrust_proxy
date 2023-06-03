@@ -84,7 +84,7 @@ if __name__ == '__main__':
         # 处理安全漏洞检测结果
         LinuxBaselineCheck.linux_scan_res_report(data)
 
-        # 计算安全分数
+        # 计算安全基线评级
         final_result = LinuxBaselineCheck.calculateScore()
         file.close()
     else:
