@@ -40,7 +40,7 @@ if __name__ == '__main__':
         else:
             print(f"{baseline_check_file_path} executed successfully.")
 
-        # 用于检测windows系统软件漏洞情况
+        # 检测windows系统漏洞情况
         try:
             p = subprocess.run(['powershell', '-Command',
                        f'Start-Process powershell -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File {software_vul_file_path}" -Verb RunAs -WindowStyle Hidden'])#  -WindowStyle Hidden用于后台运行ps

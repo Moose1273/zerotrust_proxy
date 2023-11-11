@@ -4,14 +4,16 @@
 #include <unistd.h>
 #include <sys/socket.h>
 #include <arpa/inet.h>
-#include "util.h"
-#include "communication/cJSON.h"
 #include <openssl/ssl.h>
 #include <openssl/err.h>
-#define IP_ADDRESS "121.248.51.84"
-#define PORT 5656
+
+#include "SPA.h"
+#include "src/util.h"
+#include "src/cJSON.h"
+
+#define IP_ADDRESS "127.0.0.1"
+#define PORT 7878
 #define BUF_SIZE 3000
-#include "communication/SPA.h"
 using namespace std;
 
 void printSPA(SPA msg)
@@ -64,50 +66,51 @@ int main(int argc, char *argv[])
     socklen_t clnt_addr_len = sizeof(clnt_addr);
     memset(&clnt_addr, 0, sizeof(clnt_addr));
     // 监听套接字 for tls
-    // if (listen(sockfd, 5) < 0)
-    // {
-    //     cerr << "Error listening socket." << endl;
-    //     return 1;
-    // }
+    /* if (listen(sockfd, 5) < 0)
+    {
+        cerr << "Error listening socket." << endl;
+        return 1;
+    } */
+
     while (1)
     {
         // normal udp test
 
-        SPA test;
-        socklen_t client_adr_sz = sizeof(clnt_addr);
-        ssize_t str_len = recvfrom(sockfd, message, BUF_SIZE, 0,
-                                   (struct sockaddr *)&clnt_addr, &client_adr_sz);
+        // SPA test;
+        // socklen_t client_adr_sz = sizeof(clnt_addr);
+        // ssize_t str_len = recvfrom(sockfd, message, BUF_SIZE, 0,
+        //                            (struct sockaddr *)&clnt_addr, &client_adr_sz);
 
-        struct SPA packet;
-        errif(memcpy(&packet, message, sizeof(SPA)) == NULL, "Error copying data to SPA struct");
-        std::cout << "received message from IP(" << inet_ntoa(clnt_addr.sin_addr) << "), PORT(" << clnt_addr.sin_port << "):" << std::endl;
-        printSPA(packet);
-        // 定义对象 { }
-        cJSON *interest = cJSON_CreateObject();
-        // 插入元素，对应 键值对
-        cJSON_AddItemToObject(interest, "action", cJSON_CreateString("spa_response")); // 当值是字符串时，需要使用函数cJSON_CreateString()创建
-        cJSON_AddItemToObject(interest, "status", cJSON_CreateString("200"));
-        char *cPrint = cJSON_Print(interest);
-        char newmessage[] = "this is a reply message!";
-        cout<<"sent message: "<<cPrint<<endl<<"len message is: "<< strlen(cPrint)<<endl;
-        //发送*cPrint在下面第三个参数需要使用strlen()，newmessage[]可以使用sizeof(),
-        //sizeof是编译器确定的，strlen是运行时确定
-        sendto(sockfd, cPrint, strlen(cPrint), 0,
-               (struct sockaddr *)&clnt_addr, client_adr_sz);
-        free(cPrint);
-        cJSON_Delete(interest);
+        // struct SPA packet;
+        // errif(memcpy(&packet, message, sizeof(SPA)) == NULL, "Error copying data to SPA struct");
+        // std::cout << "received message from IP(" << inet_ntoa(clnt_addr.sin_addr) << "), PORT(" << clnt_addr.sin_port << "):" << std::endl;
+        // printSPA(packet);
+        // // 定义对象 { }
+        // cJSON *interest = cJSON_CreateObject();
+        // // 插入元素，对应 键值对
+        // cJSON_AddItemToObject(interest, "action", cJSON_CreateString("spa_response")); // 当值是字符串时，需要使用函数cJSON_CreateString()创建
+        // cJSON_AddItemToObject(interest, "status", cJSON_CreateString("200"));
+        // char *cPrint = cJSON_Print(interest);
+        // char newmessage[] = "this is a reply message!";
+        // cout<<"sent message: "<<cPrint<<endl<<"len message is: "<< strlen(cPrint)<<endl;
+        // //发送*cPrint在下面第三个参数需要使用strlen()，newmessage[]可以使用sizeof(),
+        // //sizeof是编译器确定的，strlen是运行时确定
+        // sendto(sockfd, cPrint, strlen(cPrint), 0,
+        //        (struct sockaddr *)&clnt_addr, client_adr_sz);
+        // free(cPrint);
+        // cJSON_Delete(interest);
 
         // tls test
         // socklen_t clnt_addr_len = sizeof(clnt_addr);
         // memset(&clnt_addr, 0, sizeof(clnt_addr));
         // int cli_sockfd = accept(sockfd, (sockaddr *)&clnt_addr, &clnt_addr_len);
-        // if (cli_sockfd < 0)
-        // {
-        //     cerr << "Error accepting client." << endl;
-        //     continue;
-        // }
-        // cout << "Accepted connection from " << inet_ntoa(clnt_addr.sin_addr) << ":" << ntohs(clnt_addr.sin_port) << endl;
-        // // 创建 SSL 连接
+/*         if (cli_sockfd < 0)
+        {
+            cerr << "Error accepting client." << endl;
+            continue;
+        } */
+        //cout << "Accepted connection from " << inet_ntoa(clnt_addr.sin_addr) << ":" << ntohs(clnt_addr.sin_port) << endl;
+        // 创建 SSL 连接
         // SSL *ssl = SSL_new(ctx);
         // SSL_set_fd(ssl, cli_sockfd);
 
@@ -120,8 +123,8 @@ int main(int argc, char *argv[])
         //     continue;
         // }
 
-        // // 获取客户端证书信息
-        // // X从SSL套接字中获取证书信息
+        //获取客户端证书信息
+        //X从SSL套接字中获取证书信息
         // X509 *client_cert = SSL_get_peer_certificate(ssl);
         // if (client_cert == nullptr)
         // {
@@ -131,7 +134,7 @@ int main(int argc, char *argv[])
         //     close(cli_sockfd);
         //     continue;
         // }
-        // // 验证客户端证书
+        // //验证客户端证书
         // long verify_result = SSL_get_verify_result(ssl);
         // if (verify_result != X509_V_OK)
         // {
@@ -141,30 +144,35 @@ int main(int argc, char *argv[])
         //     SSL_free(ssl);
         //     close(cli_sockfd);
         // }
-        // // 接收消息
-        // char buffer[1024];
-        // SSL_read(ssl, buffer, sizeof(buffer));
-        // printf("Received message from server: %s\n", buffer);
+        // 接收消息
+        char buffer[1024];
+        //SSL_read(ssl, buffer, sizeof(buffer));
+        int len = recvfrom(sockfd, buffer, sizeof(buffer), 0, (sockaddr*)&clnt_addr, &clnt_addr_len);
+        if(len > 0){
+            printf("server Received message: %s\n", buffer);
+        }
         // // 定义对象 { }
         // cJSON *interest = cJSON_CreateObject();
         // // 插入元素，对应 键值对
         // cJSON_AddItemToObject(interest, "action", cJSON_CreateString("login_response")); // 当值是字符串时，需要使用函数cJSON_CreateString()创建
         // cJSON_AddItemToObject(interest, "status", cJSON_CreateString("200"));
         // char *cPrint = cJSON_Print(interest);
-        // // string welcome_msg = "Welcome, client!";
         // SSL_write(ssl, cPrint, strlen(cPrint));
         // cout << "发送一个消息" << endl;
         // cout << cPrint << endl;
         // free(cPrint);
         // cJSON_Delete(interest);
 
-        // // 收到service_req
+        string welcome_msg = "Welcome, client! This is Server";
+        //send(cli_sockfd, welcome_msg.c_str(), strlen(welcome_msg.c_str()), 0);
+        
+        // 收到service_req
         // memset(buffer, '\0', sizeof(buffer));
         // SSL_read(ssl, buffer, sizeof(buffer));
         // printf("Received message from server: %s\n", buffer);
 
-        // // 发送服务
-        // //  定义对象 { }
+        // 发送服务
+        //  定义对象 { }
         // cJSON *root = cJSON_CreateObject();
         // cJSON_AddItemToObject(root, "action", cJSON_CreateString("service_response")); 
         // cJSON *service_data = cJSON_CreateObject();
@@ -199,19 +207,14 @@ int main(int argc, char *argv[])
 
 
         // cPrint = cJSON_Print(root);
-        // // string welcome_msg = "Welcome, client!";
-        // SSL_write(ssl, cPrint, strlen(cPrint));
-        // cout << "发送一个消息" << endl;
-        // cout << cPrint << endl;
+        // string welcome_msg = "Welcome, client!";
+        //SSL_write(ssl, cPrint, strlen(cPrint));
+        //cout << "发送一个消息" << endl;
+        //cout << cPrint << endl;
 
 
-        // free(cPrint);
-        // cJSON_Delete(root);
-        // // 关闭 SSL 连接(no need)
-        // // SSL_shutdown(ssl);
-        // // SSL_free(ssl);
-        // // close(cli_sockfd);
-        // // X509_free(client_cert);
+        //free(cPrint);
+        //cJSON_Delete(root);
     }
     // 释放 SSL 上下文
     // SSL_CTX_free(ctx);
